@@ -1,0 +1,22 @@
+{
+  "aeroplane": "aeroplane: fixed wings, vertical tail fin, jet engines, cockpit windshield, aluminum fuselage",
+  "bicycle": "bicycle: curved handlebars, spoked wheels, pedal crankset, chainring teeth, leather saddle",
+  "boat": "boat: curved hull shape, mast with sails, outboard motor propeller, porthole windows, anchor chain",
+  "bottle": "bottle: screw-top cap, cylindrical glass body, paper label, ridged neck, flat circular base",
+  "car": "car: windshield wipers, side rearview mirrors, front grille, alloy wheels, door handle indents",
+  "cat": "cat: pointed triangular ears, long whiskers, retractable claws, furry coat texture, slender tail",
+  "chair": "chair: wooden backrest, four straight legs, padded armrests, woven seat cushion, slatted design",
+  "diningtable": "diningtable: flat rectangular surface, thick central leg, table apron, place settings, polished wooden texture",
+  "dog": "dog: floppy ears, wet nose texture, collar tag, paw pads, curly bushy tail",
+  "horse": "horse: flowing mane, elongated facial structure, hoofed feet, muscular hind legs, thick tail",
+  "person": "person: upright bipedal posture, five-fingered hands, facial features (eyes/nose/mouth), hair strands, clothing fabric",
+  "pottedplant": "pottedplant: green broad leaves, terracotta pot, exposed soil surface, drainage holes, decorative pot patterns",
+  "sheep": "sheep: thick woolly coat, short stubby tail, spiral curved horns, cloven hooves, blunt snout",
+  "train": "train: locomotive front coupler, linked passenger cars, flanged railway wheels, smokestack, pantograph roof",
+  "tvmonitor": "tvmonitor: rectangular glass screen, plastic bezel, adjustable stand, control buttons, rear input ports",
+  "bird": "bird: pointed beak, layered feather wings, sharp talons, head crest/crown, fanned tail plumage",
+  "bus": "bus: multiple row windows, flat vertical front, large rubber tires, destination signboard, elongated body",
+  "cow": "cow: pendulous udder, upward-curving horns, wet broad nose, black-and-white spotted hide, switch tail",
+  "motorbike": "motorbike: high handlebars, chrome exhaust pipes, kickstand, foot pegs, tandem vinyl seat",
+  "sofa": "sofa: tufted cushions, rolled armrests, upholstered backrest, fabric/leather texture, wooden claw feet"
+}

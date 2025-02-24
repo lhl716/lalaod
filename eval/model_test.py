@@ -13,9 +13,12 @@ from pycocotools.cocoeval import COCOeval
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model-name', type=str, default='llama3.1-8b', help='name of llm model like llama3.1-8b')
+parser.add_argument('--finetune-mode', type=str, default='lora', help='test mode: lora or ft_full')
 parser.add_argument('--data-path', type=str, help='training batch folder')
 parser.add_argument('--processed-voc-data', type=str, default='/data/lihl/LLaFS2/data/sft_data_without_attr/all_class_dataset.jsonl', help="jsonl format file, include image_path, image_size, annotation, class")
 parser.add_argument('--prepare-description', type=bool, default=False, help='need describe the image? True or False, default false.')
+parser.add_argument('--max-seq-length', type=int, help='the max sequence length after tokenize the inputs')
+parser.add_argument('--lora-path', type=str, help='the lora path')
 args = parser.parse_args()
 
 def calculate_iou(box1, box2):
@@ -118,6 +121,7 @@ def read_json(json_string):
         return parsed_data
     except json.JSONDecodeError:
         print("Warning: Cannot parse the string as JSON, returning None instead.")
+        print(json_string)
         return None
 
 def model_test(args):
@@ -125,7 +129,13 @@ def model_test(args):
     filtered_df = df[df['class'] == 'bicycle']
     filtered_df = filtered_df.reset_index(drop=True)
     feat_ext = feat_extractor()
-    model, tokenizer = load_ft_model()
+    if args.finetune_mode == 'ft_full':
+        model, tokenizer = load_ft_model()
+    elif args.finetune_mode == 'lora':
+        model, tokenizer = load_lora_model(model_path=args.lora_path)
+    else:
+        raise ValueError("please choose a test model")
+    print(f'testing {args.finetune_mode} model')
     DATASET = Get_SFT_Dataset(model_name=args.model_name, dataset=filtered_df.to_dict(orient='records'), args=args)
     
     predictions = []  # [(bbox, confidence, image_id), ...]
@@ -154,6 +164,9 @@ def model_test(args):
         
         generated_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)
         data_infered = read_json(generated_text[0])
+
+        if data_infered == None:
+            continue
 
         pred_class = data_infered['class']
         pred_bbox = data_infered['bounding_box']

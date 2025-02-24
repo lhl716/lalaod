@@ -1,0 +1,38 @@
+Loading LLM...
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.02it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.04it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.38it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.22it/s]
+WARNING:accelerate.utils.other:Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+trainable params: 83,886,080 || all params: 8,117,309,440 || trainable%: 1.0334
+Formatting Datasets from /data3/lihl/sft_dataset_20250115/train...
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+Using /data3/lihl/sft_dataset_20250115/train as train dataset
+Formatting Datasets from /data3/lihl/sft_dataset_20250115/val...
+Loading /data3/lihl/sft_dataset_20250115/val/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2536
+Using /data3/lihl/sft_dataset_20250115/val as validation dataset
+adding special token
+Traceback (most recent call last):
+  File "train/train_without_attr_voc.py", line 50, in <module>
+    train(args)
+  File "train/train_without_attr_voc.py", line 45, in train
+    llm.train()
+  File "/data/lihl/fsod/model/fsodllama.py", line 443, in train
+    trainer.train()
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/trainer.py", line 2123, in train
+    return inner_training_loop(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/trainer.py", line 2481, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/trainer.py", line 3612, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/accelerate/accelerator.py", line 2196, in backward
+    loss.backward(**kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

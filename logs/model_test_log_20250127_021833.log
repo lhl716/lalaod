@@ -1,0 +1,2493 @@
+运行开始: checkpoint-5131 Mon Jan 27 02:18:33 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.06s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.04it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.46it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.24it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-5131
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-5131
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 1, 50, 375] },
+    { "class": "person", "bbox": [1, 1, 51, 375] },
+    { "class": "person", "bbox": [1, 1, 67, 375] },
+    { "class": "person", "bbox": [1, 1, 71, 375] },
+    { "class": "person", "bbox": [1, 1, 74, 375] },
+    { "class": "person", "bbox": [1, 1, 91, 375] },
+    { "class": "person", "bbox": [1, 1, 116, 375] },
+    { "class": "person", "bbox": [1, 1, 149, 375] },
+    { "class": "person", "bbox": [1, 1, 209, 375] },
+    { "class": "person", "bbox": [1, 1, 252, 375] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 348, 222] },
+    { "class": "sheep", "bbox": [1, 136, 50, 227] },
+    { "class": "sheep", "bbox": [1, 1, 500, 375] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-5131 result:
+  mAP@0.5:       0.1426
+  mAP@0.5:0.95:  0.0644
+  AP_per_iou:    {0.5: 0.1426, 0.55: 0.1288, 0.6: 0.1217, 0.65: 0.0948, 0.7: 0.0712, 0.75: 0.0298, 0.8: 0.0269, 0.85: 0.0223, 0.9: 0.0029, 0.95: 0.0029}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 175, 47, 375] },
+    { "class": "person", "bbox": [1, 169, 41, 375] },
+    { "class": "person", "bbox": [1, 161, 50, 375] },
+    { "class": "person", "bbox": [1, 154, 62, 375] },
+    { "class": "person", "bbox": [1, 151, 73, 375] },
+    { "class": "person", "bbox": [1, 149, 77, 375] },
+    { "class": "person", "bbox": [1, 151, 100, 375] },
+    { "class": "person", "bbox": [1, 150, 131, 375] },
+    { "class": "person", "bbox": [1, 147, 172, 375] },
+    { "class": "person", "bbox": [1, 147, 226, 375] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-5131 result:
+  mAP@0.5:       0.0903
+  mAP@0.5:0.95:  0.0389
+  AP_per_iou:    {0.5: 0.0903, 0.55: 0.0814, 0.6: 0.0752, 0.65: 0.0527, 0.7: 0.0386, 0.75: 0.0184, 0.8: 0.0162, 0.85: 0.0109, 0.9: 0.0032, 0.95: 0.0019}
+运行成功: checkpoint-5131 Mon Jan 27 02:29:59 CST 2025
+运行开始: checkpoint-10262 Mon Jan 27 02:29:59 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.01it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.02it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.09it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.52it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.31it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-10262
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-10262
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 335, 226] },
+    { "class": "sheep", "bbox": [225, 149, 288, 226] },
+    { "class": "sheep", "bbox": [188, 149, 226, 226] },
+    { "class": "sheep", "bbox": [166, 149, 200, 226] },
+    { "class": "sheep", "bbox": [151, 149, 187, 226] },
+    { "class": "sheep", "bbox": [142, 149, 166, 226] },
+    { "class": "sheep", "bbox": [133, 149, 153, 226] },
+    { "class": "sheep", "bbox": [128, 149, 151, 226] },
+    { "class": "sheep", "bbox": [120, 149, 147, 226] },
+    { "class": "sheep", "bbox": [109, 149, 133, 226] },
+    { "class": "sheep", "bbox": [92, 149, 111, 226
+--[train] /data3/lihl/llama-lora-output/checkpoint-10262 result:
+  mAP@0.5:       0.166
+  mAP@0.5:0.95:  0.0686
+  AP_per_iou:    {0.5: 0.166, 0.55: 0.1639, 0.6: 0.1365, 0.65: 0.0745, 0.7: 0.0664, 0.75: 0.0269, 0.8: 0.0239, 0.85: 0.0222, 0.9: 0.0029, 0.95: 0.0029}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+--[test] /data3/lihl/llama-lora-output/checkpoint-10262 result:
+  mAP@0.5:       0.1003
+  mAP@0.5:0.95:  0.0405
+  AP_per_iou:    {0.5: 0.1003, 0.55: 0.0956, 0.6: 0.0826, 0.65: 0.0441, 0.7: 0.0357, 0.75: 0.0168, 0.8: 0.0146, 0.85: 0.0107, 0.9: 0.0031, 0.95: 0.0019}
+运行成功: checkpoint-10262 Mon Jan 27 02:41:48 CST 2025
+运行开始: checkpoint-15393 Mon Jan 27 02:41:48 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.01it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.02it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.12it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.32it/s]Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-15393
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-15393
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 83, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 214, 51, 333] },
+    { "class": "sheep", "bbox": [1, 208, 35, 242] },
+    { "class": "sheep", "bbox": [1, 204, 30, 216] },
+    { "class": "sheep", "bbox": [1, 205, 30, 210] },
+    { "class": "sheep", "bbox": [1, 205, 25, 209] },
+    { "class": "sheep", "bbox": [1, 205, 25, 213] },
+    { "class": "sheep", "bbox": [1, 205, 26, 212] },
+    { "class": "sheep", "bbox": [1, 204, 18, 212] },
+    { "class": "sheep", "bbox": [1, 204, 15, 212] },
+    { "class": "sheep", "bbox": [1, 205, 14, 212] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 1, 43, 50] },
+    { "class": "sheep", "bbox": [1, 1, 53, 51] },
+    { "class": "sheep", "bbox": [1, 1, 65, 54] },
+    { "class": "sheep", "bbox": [1, 1, 79, 53] },
+    { "class": "sheep", "bbox": [1, 1, 133, 54] },
+    { "class": "sheep", "bbox": [1, 1, 199, 57] },
+    { "class": "sheep", "bbox": [1, 1, 315, 56] },
+    { "class": "sheep", "bbox": [1, 1, 500, 281] },
+    { "class": "sheep", "bbox": [1, 1, 500, 281] },
+    { "class": "sheep", "bbox": [1, 1, 500, 281] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [1, 1, 12, 17] },
+    { "class": "bird", "bbox": [1, 1, 48, 15] },
+    { "class": "bird", "bbox": [15, 1, 32, 15] },
+    { "class": "bird", "bbox": [23, 1, 35, 15] },
+    { "class": "bird", "bbox": [35, 1, 46, 15] },
+    { "class": "bird", "bbox": [46, 1, 55, 15] },
+    { "class": "bird", "bbox": [55, 1, 65, 15] },
+    { "class": "bird", "bbox": [65, 1, 74, 15] },
+    { "class": "bird", "bbox": [74, 1, 83, 15] },
+    { "class": "bird", "bbox": [82, 1, 90, 15] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [131, 208, 170, 270] },
+    { "class": "sheep", "bbox": [217, 207, 242, 233] },
+    { "class": "sheep", "bbox": [247, 209, 272, 235] },
+    { "class": "sheep", "bbox": [292, 212, 308, 237] },
+    { "class": "sheep", "bbox": [319, 212, 338, 237] },
+    { "class": "sheep", "bbox": [348, 213, 368, 236] },
+    { "class": "sheep", "bbox": [381, 212, 397, 237] },
+    { "class": "sheep", "bbox": [401, 212, 419, 236] },
+    { "class": "sheep", "bbox": [422, 212, 437, 236] },
+    { "class": "sheep", "bbox": [429, 212, 446, 236] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "motorbike", "bbox": [1, 213, 20, 266] },
+    { "class": "motorbike", "bbox": [1, 212, 14, 246] },
+    { "class": "motorbike", "bbox": [1, 212, 26, 236] },
+    { "class": "motorbike", "bbox": [1, 210, 25, 219] },
+    { "class": "motorbike", "bbox": [1, 209, 25, 216] },
+    { "class": "motorbike", "bbox": [1, 208, 22, 212] },
+    { "class": "motorbike", "bbox": [1, 207, 18, 212] },
+    { "class": "motorbike", "bbox": [1, 204, 18, 210] },
+    { "class": "motorbike", "bbox": [1, 203, 22, 208] },
+    { "class": "motorbike", "bbox": [1, 201, 19, 206] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 144, 23, 211] },
+    { "class": "person", "bbox": [1, 142, 24, 162] },
+    { "class": "person", "bbox": [22, 143, 36, 162] },
+    { "class": "person", "bbox": [35, 143, 43, 162] },
+    { "class": "person", "bbox": [46, 143, 54, 162] },
+    { "class": "person", "bbox": [53, 143, 61, 162] },
+    { "class": "person", "bbox": [61, 143, 68, 162] },
+    { "class": "person", "bbox": [68, 143, 76, 162] },
+    { "class": "person", "bbox": [75, 143, 84, 162] },
+    { "class": "person", "bbox": [83, 143, 92, 162] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 375, 240] },
+    { "class": "sheep", "bbox": [375, 143, 422, 217] },
+    { "class": "sheep", "bbox": [421, 148, 500, 238] },
+    { "class": "sheep", "bbox": [337, 143, 423, 230] },
+    { "class": "sheep", "bbox": [1, 138, 31, 173] },
+    { "class": "sheep", "bbox": [1, 138, 57, 170] },
+    { "class": "sheep", "bbox": [1, 143, 62, 176] },
+    { "class": "sheep", "bbox": [1, 143, 53, 177] },
+    { "class": "sheep", "bbox": [1, 143, 44, 169] },
+    { "class": "sheep", "bbox": [1, 143, 56, 170] },
+    { "class": "sheep", "bbox": [1, 142, 55, 169
+--[train] /data3/lihl/llama-lora-output/checkpoint-15393 result:
+  mAP@0.5:       0.1928
+  mAP@0.5:0.95:  0.0763
+  AP_per_iou:    {0.5: 0.1928, 0.55: 0.1413, 0.6: 0.1172, 0.65: 0.0956, 0.7: 0.0853, 0.75: 0.0538, 0.8: 0.0392, 0.85: 0.0275, 0.9: 0.0077, 0.95: 0.0027}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 86, 16, 134] },
+    { "class": "person", "bbox": [1, 96, 19, 131] },
+    { "class": "person", "bbox": [1, 114, 18, 134] },
+    { "class": "person", "bbox": [1, 122, 19, 134] },
+    { "class": "person", "bbox": [1, 130, 22, 154] },
+    { "class": "person", "bbox": [1, 142, 24, 162] },
+    { "class": "person", "bbox": [1, 148, 25, 162] },
+    { "class": "person", "bbox": [1, 162, 26, 171] },
+    { "class": "person", "bbox": [1, 171, 26, 176] },
+    { "class": "person", "bbox": [1, 177, 24, 183] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "chair", "bbox": [1, 200, 93, 375] },
+    { "class": "chair", "bbox": [1, 188, 74, 295] },
+    { "class": "chair", "bbox": [1, 185, 57, 217] },
+    { "class": "chair", "bbox": [1, 175, 61, 186] },
+    { "class": "chair", "bbox": [1, 168, 30, 174] },
+    { "class": "chair", "bbox": [1, 158, 27, 166] },
+    { "class": "chair", "bbox": [1, 147, 26, 154] },
+    { "class": "chair", "bbox": [1, 135, 25, 143] },
+    { "class": "chair", "bbox": [1, 126, 22, 132] },
+    { "class": "chair", "bbox": [1, 116, 19, 132] },
+    { "class": "chair", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 1, 12, 18] },
+    { "class": "sheep", "bbox": [1, 1, 18, 14] },
+    { "class": "sheep", "bbox": [1, 1, 23, 20] },
+    { "class": "sheep", "bbox": [1, 1, 23, 23] },
+    { "class": "sheep", "bbox": [1, 1, 27, 23] },
+    { "class": "sheep", "bbox": [1, 1, 32, 23] },
+    { "class": "sheep", "bbox": [1, 1, 34, 23] },
+    { "class": "sheep", "bbox": [1, 1, 40, 26] },
+    { "class": "sheep", "bbox": [1, 1, 47, 29] },
+    { "class": "sheep", "bbox": [1, 1, 46, 29] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [152, 103, 176, 134] },
+    { "class": "bird", "bbox": [150, 72, 170, 92] },
+    { "class": "bird", "bbox": [166, 69, 178, 83] },
+    { "class": "bird", "bbox": [175, 69, 185, 83] },
+    { "class": "bird", "bbox": [185, 68, 195, 83] },
+    { "class": "bird", "bbox": [194, 66, 205, 83] },
+    { "class": "bird", "bbox": [205, 65, 214, 82] },
+    { "class": "bird", "bbox": [214, 63, 224, 81] },
+    { "class": "bird", "bbox": [223, 61, 232, 77] },
+    { "class": "bird", "bbox": [232, 57, 239, 74] },
+    { "class": "bird", "bbox
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 132, 18, 188] },
+    { "class": "person", "bbox": [1, 131, 23, 183] },
+    { "class": "person", "bbox": [22, 132, 35, 183] },
+    { "class": "person", "bbox": [34, 132, 47, 183] },
+    { "class": "person", "bbox": [46, 132, 57, 183] },
+    { "class": "person", "bbox": [57, 132, 65, 183] },
+    { "class": "person", "bbox": [65, 132, 74, 183] },
+    { "class": "person", "bbox": [74, 132, 82, 183] },
+    { "class": "person", "bbox": [82, 132, 90, 183] },
+    { "class": "person", "bbox": [89, 132, 97, 183] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-15393 result:
+  mAP@0.5:       0.1251
+  mAP@0.5:0.95:  0.049
+  AP_per_iou:    {0.5: 0.1251, 0.55: 0.0977, 0.6: 0.078, 0.65: 0.0584, 0.7: 0.0497, 0.75: 0.0335, 0.8: 0.0267, 0.85: 0.0153, 0.9: 0.0036, 0.95: 0.0016}
+运行成功: checkpoint-15393 Mon Jan 27 02:54:43 CST 2025
+运行开始: checkpoint-20524 Mon Jan 27 02:54:43 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.04s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.02s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.07it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.49it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.27it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-20524
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-20524
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 100, 26, 375] },
+    { "class": "person", "bbox": [1, 1, 80, 375] },
+    { "class": "person", "bbox": [1, 1, 133, 375] },
+    { "class": "person", "bbox": [73, 1, 176, 375] },
+    { "class": "person", "bbox": [157, 1, 238, 375] },
+    { "class": "person", "bbox": [230, 1, 323, 375] },
+    { "class": "person", "bbox": [318, 1, 368, 375] },
+    { "class": "person", "bbox": [360, 1, 449, 375] },
+    { "class": "person", "bbox": [436, 1, 500, 375] },
+    { "class": "person", "bbox": [1, 1, 1, 375] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+    { "class": "sheep", "bbox": [1, 1, 1, 1] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [1, 1, 18, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox": [1, 1, 26, 27] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 181, 32, 240] },
+    { "class": "sheep", "bbox": [1, 193, 16, 266] },
+    { "class": "sheep", "bbox": [1, 241, 29, 306] },
+    { "class": "sheep", "bbox": [1, 285, 34, 314] },
+    { "class": "sheep", "bbox": [1, 311, 30, 348] },
+    { "class": "sheep", "bbox": [1, 347, 31, 376] },
+    { "class": "sheep", "bbox": [1, 373, 31, 397] },
+    { "class": "sheep", "bbox": [1, 397, 30, 419] },
+    { "class": "sheep", "bbox": [1, 419, 29, 441] },
+    { "class": "sheep", "bbox": [1, 441, 30, 465] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 174, 23, 375] },
+    { "class": "person", "bbox": [1, 170, 13, 238] },
+    { "class": "person", "bbox": [1, 174, 11, 238] },
+    { "class": "person", "bbox": [1, 174, 10, 238] },
+    { "class": "person", "bbox": [1, 174, 11, 238] },
+    { "class": "person", "bbox": [1, 174, 11, 238] },
+    { "class": "person", "bbox": [1, 174, 10, 238] },
+    { "class": "person", "bbox": [1, 174, 11, 238] },
+    { "class": "person", "bbox": [1, 174, 10, 238] },
+    { "class": "person", "bbox": [1, 174, 11, 238] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 339, 238] },
+    { "class": "sheep", "bbox": [348, 142, 403, 234] },
+    { "class": "sheep", "bbox": [405, 140, 468, 235] },
+    { "class": "sheep", "bbox": [446, 142, 500, 234] },
+    { "class": "sheep", "bbox": [468, 138, 500, 234] },
+    { "class": "sheep", "bbox": [1, 1, 41, 68] },
+    { "class": "sheep", "bbox": [1, 1, 17, 20] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-20524 result:
+  mAP@0.5:       0.1876
+  mAP@0.5:0.95:  0.077
+  AP_per_iou:    {0.5: 0.1876, 0.55: 0.1673, 0.6: 0.1271, 0.65: 0.0979, 0.7: 0.0826, 0.75: 0.0514, 0.8: 0.0292, 0.85: 0.0216, 0.9: 0.0028, 0.95: 0.0028}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 172, 20, 375] },
+    { "class": "person", "bbox": [1, 150, 20, 220] },
+    { "class": "person", "bbox": [1, 126, 14, 170] },
+    { "class": "person", "bbox": [1, 108, 14, 154] },
+    { "class": "person", "bbox": [1, 100, 13, 137] },
+    { "class": "person", "bbox": [1, 91, 13, 124] },
+    { "class": "person", "bbox": [1, 75, 14, 110] },
+    { "class": "person", "bbox": [1, 68, 15, 103] },
+    { "class": "person", "bbox": [1, 56, 15, 92] },
+    { "class": "person", "bbox": [1, 48, 15, 73] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 130, 54, 375] },
+    { "class": "person", "bbox": [1, 130, 119, 375] },
+    { "class": "person", "bbox": [1, 141, 117, 375] },
+    { "class": "person", "bbox": [1, 133, 123, 375] },
+    { "class": "person", "bbox": [1, 128, 121, 375] },
+    { "class": "person", "bbox": [1, 141, 123, 375] },
+    { "class": "person", "bbox": [1, 143, 124, 375] },
+    { "class": "person", "bbox": [1, 138, 124, 375] },
+    { "class": "person", "bbox": [1, 138, 124, 375] },
+    { "class": "person", "bbox": [1, 137, 124, 375] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 100, 32, 333] },
+    { "class": "person", "bbox": [1, 1, 26, 333] },
+    { "class": "person", "bbox": [1, 1, 21, 333] },
+    { "class": "person", "bbox": [1, 1, 31, 333] },
+    { "class": "person", "bbox": [1, 1, 25, 333] },
+    { "class": "person", "bbox": [1, 1, 27, 333] },
+    { "class": "person", "bbox": [1, 1, 26, 333] },
+    { "class": "person", "bbox": [1, 1, 25, 333] },
+    { "class": "person", "bbox": [1, 1, 27, 333] },
+    { "class": "person", "bbox": [1, 1, 26, 333] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-20524 result:
+  mAP@0.5:       0.1174
+  mAP@0.5:0.95:  0.0471
+  AP_per_iou:    {0.5: 0.1174, 0.55: 0.101, 0.6: 0.0791, 0.65: 0.0586, 0.7: 0.047, 0.75: 0.0302, 0.8: 0.0185, 0.85: 0.0142, 0.9: 0.0032, 0.95: 0.0018}
+运行成功: checkpoint-20524 Mon Jan 27 03:07:43 CST 2025
+运行开始: checkpoint-25655 Mon Jan 27 03:07:43 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.01it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.01s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.08it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.50it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.29it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-25655
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-25655
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "car", "bbox": [1, 257, 47, 375] },
+    { "class": "car", "bbox": [1, 240, 117, 375] },
+    { "class": "car", "bbox": [1, 236, 63, 375] },
+    { "class": "car", "bbox": [1, 230, 117, 375] },
+    { "class": "car", "bbox": [1, 220, 64, 375] },
+    { "class": "car", "bbox": [1, 217, 47, 375] },
+    { "class": "car", "bbox": [1, 215, 45, 375] },
+    { "class": "car", "bbox": [1, 212, 63, 375] },
+    { "class": "car", "bbox": [1, 209, 65, 375] },
+    { "class": "car", "bbox": [1, 206, 63, 375] },
+    { "class": "car", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 94, 77, 150] },
+    { "class": "sheep", "bbox": [1, 107, 75, 162] },
+    { "class": "sheep", "bbox": [1, 119, 89, 154] },
+    { "class": "sheep", "bbox": [1, 135, 103, 178] },
+    { "class": "sheep", "bbox": [1, 151, 75, 201] },
+    { "class": "sheep", "bbox": [1, 154, 100, 203] },
+    { "class": "sheep", "bbox": [1, 177, 78, 239] },
+    { "class": "sheep", "bbox": [1, 205, 75, 253] },
+    { "class": "sheep", "bbox": [1, 247, 77, 280] },
+    { "class": "sheep", "bbox": [1, 1, 106, 65] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [217, 165, 262, 201] },
+    { "class": "sheep", "bbox": [158, 161, 217, 202] },
+    { "class": "sheep", "bbox": [105, 159, 175, 201] },
+    { "class": "sheep", "bbox": [1, 159, 95, 201] },
+    { "class": "sheep", "bbox": [1, 153, 38, 201] },
+    { "class": "sheep", "bbox": [1, 161, 65, 201] },
+    { "class": "sheep", "bbox": [1, 162, 26, 201] },
+    { "class": "sheep", "bbox": [1, 161, 45, 201] },
+    { "class": "sheep", "bbox": [1, 159, 65, 201] },
+    { "class": "sheep", "bbox": [1, 156, 35, 201] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "motorbike", "bbox": [1, 218, 164, 375] },
+    { "class": "motorbike", "bbox": [1, 239, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 261, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 261, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 277, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 284, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 306, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 314, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 326, 117, 375] },
+    { "class": "motorbike", "bbox": [1, 335, 117, 375] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 184, 29, 263] },
+    { "class": "person", "bbox": [1, 180, 38, 263] },
+    { "class": "person", "bbox": [1, 183, 20, 263] },
+    { "class": "person", "bbox": [1, 180, 30, 263] },
+    { "class": "person", "bbox": [1, 183, 45, 261] },
+    { "class": "person", "bbox": [1, 183, 28, 261] },
+    { "class": "person", "bbox": [1, 186, 35, 262] },
+    { "class": "person", "bbox": [1, 181, 29, 262] },
+    { "class": "person", "bbox": [1, 183, 39, 262] },
+    { "class": "person", "bbox": [1, 185, 28, 258] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 335, 219] },
+    { "class": "sheep", "bbox": [323, 139, 354, 165] },
+    { "class": "sheep", "bbox": [336, 139, 376, 167] },
+    { "class": "sheep", "bbox": [376, 140, 409, 167] },
+    { "class": "sheep", "bbox": [408, 140, 451, 166] },
+    { "class": "sheep", "bbox": [450, 140, 500, 167] },
+    { "class": "sheep", "bbox": [497, 142, 500, 167] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-25655 result:
+  mAP@0.5:       0.2921
+  mAP@0.5:0.95:  0.1469
+  AP_per_iou:    {0.5: 0.2921, 0.55: 0.2442, 0.6: 0.22, 0.65: 0.1924, 0.7: 0.1593, 0.75: 0.1118, 0.8: 0.0901, 0.85: 0.0738, 0.9: 0.0529, 0.95: 0.0326}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 75, 126, 375] },
+    { "class": "person", "bbox": [121, 128, 202, 375] },
+    { "class": "person", "bbox": [153, 143, 216, 375] },
+    { "class": "person", "bbox": [223, 134, 296, 375] },
+    { "class": "person", "bbox": [284, 136, 355, 375] },
+    { "class": "person", "bbox": [330, 136, 404, 375] },
+    { "class": "person", "bbox": [397, 135, 500, 375] },
+    { "class": "person", "bbox": [1, 118, 55, 375] },
+    { "class": "person", "bbox": [1, 109, 109, 375] },
+    { "class": "person", "bbox": [1, 98, 64, 375] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "chair", "bbox": [1, 187, 117, 375] },
+    { "class": "chair", "bbox": [1, 247, 189, 375] },
+    { "class": "chair", "bbox": [1, 221, 85, 375] },
+    { "class": "chair", "bbox": [1, 187, 94, 375] },
+    { "class": "chair", "bbox": [1, 171, 61, 375] },
+    { "class": "chair", "bbox": [1, 152, 27, 195] },
+    { "class": "chair", "bbox": [1, 149, 38, 179] },
+    { "class": "chair", "bbox": [1, 147, 33, 179] },
+    { "class": "chair", "bbox": [1, 144, 28, 177] },
+    { "class": "chair", "bbox": [1, 143, 36, 178] },
+    { "class": "chair", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-25655 result:
+  mAP@0.5:       0.1771
+  mAP@0.5:0.95:  0.0823
+  AP_per_iou:    {0.5: 0.1771, 0.55: 0.1486, 0.6: 0.1303, 0.65: 0.1068, 0.7: 0.0824, 0.75: 0.0605, 0.8: 0.0469, 0.85: 0.0329, 0.9: 0.0235, 0.95: 0.0143}
+运行成功: checkpoint-25655 Mon Jan 27 03:20:41 CST 2025
+运行开始: checkpoint-30786 Mon Jan 27 03:20:41 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.01it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.09it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.51it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.30it/s]Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-30786
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-30786
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [313, 220, 334, 248] },
+    { "class": "sheep", "bbox": [259, 224, 281, 246] },
+    { "class": "sheep", "bbox": [242, 224, 264, 248] },
+    { "class": "sheep", "bbox": [221, 224, 242, 245] },
+    { "class": "sheep", "bbox": [202, 224, 221, 242] },
+    { "class": "sheep", "bbox": [175, 224, 197, 242] },
+    { "class": "sheep", "bbox": [153, 224, 174, 242] },
+    { "class": "sheep", "bbox": [126, 224, 150, 242] },
+    { "class": "sheep", "bbox": [104, 224, 127, 242] },
+    { "class": "sheep", "bbox": [92, 224, 106, 242] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 107, 108, 281] },
+    { "class": "sheep", "bbox": [1, 90, 135, 179] },
+    { "class": "sheep", "bbox": [1, 92, 194, 174] },
+    { "class": "sheep", "bbox": [1, 93, 264, 181] },
+    { "class": "sheep", "bbox": [1, 104, 263, 171] },
+    { "class": "sheep", "bbox": [1, 113, 272, 174] },
+    { "class": "sheep", "bbox": [1, 126, 283, 201] },
+    { "class": "sheep", "bbox": [1, 131, 284, 199] },
+    { "class": "sheep", "bbox": [1, 144, 290, 208] },
+    { "class": "sheep", "bbox": [1, 153, 294, 212] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [1, 241, 75, 325] },
+    { "class": "bird", "bbox": [2, 247, 71, 326] },
+    { "class": "bird", "bbox": [63, 241, 146, 326] },
+    { "class": "bird", "bbox": [135, 243, 185, 316] },
+    { "class": "bird", "bbox": [181, 244, 246, 315] },
+    { "class": "bird", "bbox": [174, 245, 244, 315] },
+    { "class": "bird", "bbox": [242, 244, 310, 316] },
+    { "class": "bird", "bbox": [298, 245, 350, 316] },
+    { "class": "bird", "bbox": [343, 248, 405, 316] },
+    { "class": "bird", "bbox": [386, 247, 452, 316] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep": "sheep, "bbox": [270, 195, 303, 220] },
+    { "class": "sheep", "bbox": [217, 200, 244, 219] },
+    { "class": "sheep", "bbox": [164, 195, 198, 219] },
+    { "class": "sheep", "bbox": [104, 193, 135, 217] },
+    { "class": "sheep", "bbox": [91, 195, 123, 216] },
+    { "class": "sheep", "bbox": [73, 195, 105, 216] },
+    { "class": "sheep", "bbox": [28, 195, 70, 216] },
+    { "class": "sheep", "bbox": [1, 194, 29, 216] }]
+}
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "motorbike", "bbox": [1, 268, 117, 375] },
+    { "class": "motorbike", "bbox": [116, 255, 173, 375] },
+    { "class": "motorbike", "bbox": [174, 245, 226, 375] },
+    { "class": "motorbike", "bbox": [226, 241, 261, 375] },
+    { "class": "motorbike", "bbox": [261, 245, 303, 375] },
+    { "class": "motorbike", "bbox": [301, 246, 336, 375] },
+    { "class": "motorbike", "bbox": [320, 245, 357, 375] },
+    { "class": "motorbike", "bbox": [343, 245, 389, 375] },
+    { "class": "motorbike", "bbox": [390, 245, 429, 375] },
+    { "class": "motorbike", "bbox": [429, 245, 476, 375] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 170, 93, 375] },
+    { "class": "person", "bbox": [81, 174, 146, 375] },
+    { "class": "person", "bbox": [134, 171, 183, 221] },
+    { "class": "person", "bbox": [181, 175, 223, 216] },
+    { "class": "person", "bbox": [218, 177, 264, 213] },
+    { "class": "person", "bbox": [264, 175, 301, 209] },
+    { "class": "person", "bbox": [298, 175, 336, 212] },
+    { "class": "person", "bbox": [336, 174, 376, 212] },
+    { "class": "person", "bbox": [379, 177, 423, 216] },
+    { "class": "person", "bbox": [424, 177, 469, 216] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bottle", "bbox": [338, 267, 350, 301] },
+    { "class": "bottle", "bbox": [335, 264, 345, 291] },
+    { "class": "bottle", "bbox": [318, 264, 329, 291] },
+    { "class": "bottle", "bbox": [292, 264, 306, 291] },
+    { "class": "bottle", "bbox": [275, 264, 289, 291] },
+    { "class": "bottle", "bbox": [269, 264, 283, 291] },
+    { "class": "bottle", "bbox": [253, 264, 265, 291] },
+    { "class": "bottle", "bbox": [247, 264, 261, 291] },
+    { "class": "bottle", "bbox": [236, 264, 249, 291] },
+    { "class": "bottle", "bbox": [225, 264, 239, 291] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 349, 234] },
+    { "class": "sheep", "bbox": [1, 133, 35, 161] },
+    { "class": "sheep", "bbox": [1, 134, 40, 159] },
+    { "class": "sheep", "bbox": [1, 129, 37, 153] },
+    { "class": "sheep", "bbox": [40, 129, 79, 151] },
+    { "class": "sheep", "bbox": [72, 129, 112, 151] },
+    { "class": "sheep", "bbox": [102, 128, 131, 148] },
+    { "class": "sheep", "bbox": [126, 132, 155, 151] },
+    { "class": "sheep", "bbox": [135, 126, 173, 151] },
+    { "class": "sheep", "bbox": [173, 125, 207, 150] },
+    { "class": "sheep", "bbox": [204, 125, 241, 151
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "chair", "bbox": [1, 232, 75, 375] },
+    { "class": "chair", "bbox": [1, 193, 54, 234] },
+    { "class": "chair", "bbox": [54, 200, 81, 238] },
+    { "class": "chair", "bbox": [81, 195, 113, 237] },
+    { "class": "chair", "bbox": [112, 195, 140, 237] },
+    { "class": "chair", "bbox": [140, 195, 166, 237] },
+    { "class": "chair", "bbox": [163, 195, 197, 237] },
+    { "class": "chair", "bbox": [197, 195, 216, 237] },
+    { "class": "chair", "bbox": [216, 195, 245, 237] },
+    { "class": "chair", "bbox": [245, 195, 275, 237] },
+    { "class": "chair", "bbox
+--[train] /data3/lihl/llama-lora-output/checkpoint-30786 result:
+  mAP@0.5:       0.4761
+  mAP@0.5:0.95:  0.3107
+  AP_per_iou:    {0.5: 0.4761, 0.55: 0.4443, 0.6: 0.3657, 0.65: 0.3428, 0.7: 0.2968, 0.75: 0.2733, 0.8: 0.2672, 0.85: 0.2589, 0.9: 0.204, 0.95: 0.1776}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 111, 115, 375] },
+    { "class": "person", "bbox": [118, 107, 152, 194] },
+    { "class": "person", "bbox": [135, 107, 167, 153] },
+    { "class": "person", "bbox": [164, 106, 194, 153] },
+    { "class": "person", "bbox": [194, 105, 221, 153] },
+    { "class": "person", "bbox": [218, 108, 245, 153] },
+    { "class": "person", "bbox": [245, 107, 272, 153] },
+    { "class": "person", "bbox": [272, 107, 303, 153] },
+    { "class": "person", "bbox": [303, 107, 329, 153] },
+    { "class": "person", "bbox": [329, 108, 357, 153] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 202, 62, 375] },
+    { "class": "person", "bbox": [474, 213, 500, 375] },
+    { "class": "person", "bbox": [412, 221, 474, 375] },
+    { "class": "person", "bbox": [389, 218, 424, 375] },
+    { "class": "person", "bbox": [351, 221, 382, 375] },
+    { "class": "person", "bbox": [319, 223, 351, 375] },
+    { "class": "person", "bbox": [299, 221, 333, 375] },
+    { "class": "person", "bbox": [272, 220, 303, 375] },
+    { "class": "person", "bbox": [252, 221, 272, 375] },
+    { "class": "person", "bbox": [229, 220, 252, 375] },
+    { "class": "person", "bbox
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [313, 82, 411, 273] },
+    { "class": "person", "bbox": [242, 103, 301, 223] },
+    { "class": "person", "bbox": [194, 103, 245, 174] },
+    { "class": "person", "bbox": [153, 103, 195, 175] },
+    { "class": "person", "bbox": [77, 103, 144, 174] },
+    { "class": "person", "bbox": [1, 103, 55, 173] },
+    { "class": "person", "bbox": [1, 103, 29, 174] },
+    { "class": "person", "bbox": [29, 104, 68, 174] },
+    { "class": "person", "bbox": [75, 107, 111, 174] },
+    { "class": "person", "bbox": [112, 103, 144, 174] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [2, 60, 324, 333] },
+    { "class": "person", "bbox": [1, 1, 106, 333] },
+    { "class": "person", "bbox": [404, 1, 500, 333] },
+    { "class": "person", "bbox": [377, 1, 426, 60] },
+    { "class": "person", "bbox": [429, 1, 474, 60] },
+    { "class": "person", "bbox": [459, 1, 500, 59] },
+    { "class": "person", "bbox": [436, 1, 473, 59] },
+    { "class": "person", "bbox": [406, 1, 436, 60] },
+    { "class": "person", "bbox": [387, 1, 409, 59] },
+    { "class": "person", "bbox": [374, 1, 386, 59] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [196, 141, 220, 172] },
+    { "class": "bird", "bbox": [225, 141, 243, 166] },
+    { "class": "bird", "bbox": [245, 141, 263, 165] },
+    { "class": "bird", "bbox": [265, 141, 281, 165] },
+    { "class": "bird", "bbox": [281, 141, 292, 165] },
+    { "class": "bird", "bbox": [292, 141, 302, 165] },
+    { "class": "bird", "bbox": [304, 141, 312, 165] },
+    { "class": "bird", "bbox": [313, 141, 320, 165] },
+    { "class": "bird", "bbox": [320, 141, 327, 165] },
+    { "class": "bird", "bbox": [331, 141, 338, 165] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "car", "bbox": [1, 267, 56, 269] },
+    { "class": "car", "bbox": [185, 262, 218, 277] },
+    { "class": "car", "bbox": [206, 263, 245, 281] },
+    { "class": "car", "bbox": [245, 263, 273, 281] },
+    { "class": "car", "bbox": [273, 264, 291, 281] },
+    { "class": "car", "bbox": [291, 265, 310, 281] },
+    { "class": "car", "bbox": [310, 264, 328, 281] },
+    { "class": "car", "bbox": [327, 263, 348, 281] },
+    { "class": "car", "bbox": [347, 265, 375, 281] },
+    { "class": "car", "bbox": [375, 264, 375, 281] },
+    { "class": "car", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 159, 57, 295] },
+    { "class": "person", "bbox": [61, 158, 99, 241] },
+    { "class": "person", "bbox": [105, 153, 156, 241] },
+    { "class": "person", "bbox": [150, 153, 191, 241] },
+    { "class": "person", "bbox": [187, 155, 241, 241] },
+    { "class": "person", "bbox": [242, 154, 291, 241] },
+    { "class": "person", "bbox": [291, 153, 333, 241] },
+    { "class": "person", "bbox": [320, 153, 363, 241] },
+    { "class": "person", "bbox": [369, 153, 406, 241] },
+    { "class": "person", "bbox": [401, 155, 444, 241] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 131, 61, 333] },
+    { "class": "person", "bbox": [73, 146, 146, 333] },
+    { "class": "person", "bbox": [146, 134, 193, 333] },
+    { "class": "person", "bbox": [181, 135, 242, 333] },
+    { "class": "person", "bbox": [241, 136, 293, 333] },
+    { "class": "person", "bbox": [302, 143, 336, 333] },
+    { "class": "person", "bbox": [327, 135, 374, 333] },
+    { "class": "person", "bbox": [374, 135, 404, 333] },
+    { "class": "person", "bbox": [404, 134, 444, 333] },
+    { "class": "person", "bbox": [436, 135, 473, 333] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-30786 result:
+  mAP@0.5:       0.2752
+  mAP@0.5:0.95:  0.1549
+  AP_per_iou:    {0.5: 0.2752, 0.55: 0.2434, 0.6: 0.1913, 0.65: 0.1658, 0.7: 0.1487, 0.75: 0.1255, 0.8: 0.1196, 0.85: 0.1111, 0.9: 0.0913, 0.95: 0.0776}
+运行成功: checkpoint-30786 Mon Jan 27 03:34:50 CST 2025
+运行开始: checkpoint-35917 Mon Jan 27 03:34:50 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.01it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.05it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.12it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.55it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.33it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-35917
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-35917
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 135, 59, 375] },
+    { "class": "person", "bbox": [56, 139, 80, 192] },
+    { "class": "person", "bbox": [81, 139, 100, 183] },
+    { "class": "person", "bbox": [100, 138, 116, 184] },
+    { "class": "person", "bbox": [116, 138, 132, 184] },
+    { "class": "person", "bbox": [132, 138, 146, 184] },
+    { "class": "person", "bbox": [146, 138, 163, 184] },
+    { "class": "person", "bbox": [163, 138, 177, 184] },
+    { "class": "person", "bbox": [177, 138, 194, 184] },
+    { "class": "person", "bbox": [194, 138, 207, 184] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bottle", "bbox": [338, 276, 350, 314] },
+    { "class": "bottle", "bbox": [335, 271, 345, 311] },
+    { "class": "bottle", "bbox": [318, 274, 328, 311] },
+    { "class": "bottle", "bbox": [310, 275, 324, 311] },
+    { "class": "bottle", "bbox": [293, 274, 306, 310] },
+    { "class": "bottle", "bbox": [284, 275, 293, 310] },
+    { "class": "bottle", "bbox": [273, 275, 284, 310] },
+    { "class": "bottle", "bbox": [265, 275, 275, 310] },
+    { "class": "bottle", "bbox": [252, 275, 263, 309] },
+    { "class": "bottle", "bbox": [237, 275, 252, 310] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 342, 220] },
+    { "class": "sheep", "bbox": [1, 144, 38, 201] },
+    { "class": "sheep", "bbox": [1, 148, 32, 202] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-35917 result:
+  mAP@0.5:       0.568
+  mAP@0.5:0.95:  0.4605
+  AP_per_iou:    {0.5: 0.568, 0.55: 0.5456, 0.6: 0.5151, 0.65: 0.5002, 0.7: 0.4742, 0.75: 0.4583, 0.8: 0.4548, 0.85: 0.4178, 0.9: 0.3447, 0.95: 0.3259}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 109, 24, 375] },
+    { "class": "person", "bbox": [12, 117, 37, 375] },
+    { "class": "person", "bbox": [28, 117, 54, 375] },
+    { "class": "person", "bbox": [54, 116, 71, 375] },
+    { "class": "person", "bbox": [71, 116, 87, 375] },
+    { "class": "person", "bbox": [87, 117, 100, 375] },
+    { "class": "person", "bbox": [100, 116, 114, 375] },
+    { "class": "person", "bbox": [111, 116, 125, 375] },
+    { "class": "person", "bbox": [125, 116, 138, 375] },
+    { "class": "person", "bbox": [138, 116, 155, 375] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 114, 110, 375] },
+    { "class": "person", "bbox": [104, 124, 154, 375] },
+    { "class": "person", "bbox": [149, 125, 200, 199] },
+    { "class": "person", "bbox": [238, 133, 294, 199] },
+    { "class": "person", "bbox": [291, 138, 349, 199] },
+    { "class": "person", "bbox": [327, 138, 373, 199] },
+    { "class": "person", "bbox": [371, 138, 422, 197] },
+    { "class": "person", "bbox": [415, 138, 468, 198] },
+    { "class": "person", "bbox": [456, 138, 500, 199] },
+    { "class": "person", "bbox": [1, 138, 41, 194] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "motorbike", "bbox": [1, 124, 76, 226] },
+    { "class": "motorbike", "bbox": [76, 136, 160, 226] },
+    { "class": "motorbike", "bbox": [143, 136, 220, 226] },
+    { "class": "motorbike", "bbox": [227, 138, 293, 226] },
+    { "class": "motorbike", "bbox": [294, 138, 351, 226] },
+    { "class": "motorbike", "bbox": [351, 138, 408, 226] },
+    { "class": "motorbike", "bbox": [1, 1, 48, 64] },
+    { "class": "motorbike", "bbox": [48, 1, 98, 64] },
+    { "class": "motorbike", "bbox": [98, 1, 144, 64] },
+    { "class": "motorbike", "bbox": [144, 1, 197, 64] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 103, 65, 333] },
+    { "class": "person", "bbox": [59, 119, 79, 333] },
+    { "class": "person", "bbox": [81, 131, 102, 333] },
+    { "class": "person", "bbox": [100, 135, 126, 333] },
+    { "class": "person", "bbox": [126, 135, 152, 333] },
+    { "class": "person", "bbox": [149, 135, 171, 333] },
+    { "class": "person", "bbox": [163, 135, 190, 333] },
+    { "class": "person", "bbox": [188, 135, 208, 333] },
+    { "class": "person", "bbox": [206, 135, 230, 333] },
+    { "class": "person", "bbox": [230, 135, 246, 333] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-35917 result:
+  mAP@0.5:       0.3287
+  mAP@0.5:0.95:  0.2257
+  AP_per_iou:    {0.5: 0.3287, 0.55: 0.3024, 0.6: 0.2644, 0.65: 0.2461, 0.7: 0.2206, 0.75: 0.2063, 0.8: 0.2017, 0.85: 0.1892, 0.9: 0.1565, 0.95: 0.1412}
+运行成功: checkpoint-35917 Mon Jan 27 03:48:03 CST 2025
+运行开始: checkpoint-41048 Mon Jan 27 03:48:03 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.01it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.05it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.13it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.34it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-41048
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-41048
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 342, 232] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-41048 result:
+  mAP@0.5:       0.6768
+  mAP@0.5:0.95:  0.6144
+  AP_per_iou:    {0.5: 0.6768, 0.55: 0.6756, 0.6: 0.6756, 0.65: 0.6633, 0.7: 0.6435, 0.75: 0.6209, 0.8: 0.5778, 0.85: 0.5552, 0.9: 0.5442, 0.95: 0.5108}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 115, 26, 326] },
+    { "class": "person", "bbox": [29, 122, 58, 324] },
+    { "class": "person", "bbox": [61, 119, 97, 324] },
+    { "class": "person", "bbox": [104, 122, 129, 324] },
+    { "class": "person", "bbox": [119, 119, 150, 324] },
+    { "class": "person", "bbox": [146, 119, 170, 324] },
+    { "class": "person", "bbox": [170, 119, 194, 324] },
+    { "class": "person", "bbox": [194, 119, 216, 324] },
+    { "class": "person", "bbox": [216, 119, 232, 324] },
+    { "class": "person", "bbox": [231, 119, 245, 324] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-41048 result:
+  mAP@0.5:       0.3691
+  mAP@0.5:0.95:  0.2946
+  AP_per_iou:    {0.5: 0.3691, 0.55: 0.3572, 0.6: 0.3476, 0.65: 0.3188, 0.7: 0.3033, 0.75: 0.2852, 0.8: 0.259, 0.85: 0.2461, 0.9: 0.2395, 0.95: 0.2202}
+运行成功: checkpoint-41048 Mon Jan 27 04:00:19 CST 2025
+运行开始: checkpoint-46179 Mon Jan 27 04:00:19 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.04it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.08it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.17it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.39it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-46179
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-46179
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 216, 49, 281] },
+    { "class": "sheep", "bbox": [1, 109, 80, 198] },
+    { "class": "sheep", "bbox": [1, 78, 72, 176] },
+    { "class": "sheep", "bbox": [1, 47, 97, 121] },
+    { "class": "sheep", "bbox": [1, 36, 95, 72] },
+    { "class": "sheep", "bbox": [1, 29, 97, 51] },
+    { "class": "sheep", "bbox": [1, 23, 97, 39] },
+    { "class": "sheep", "bbox": [1, 1, 100, 25] },
+    { "class": "sheep", "bbox": [1, 1, 94, 11] },
+    { "class": "sheep", "bbox": [1, 1, 111, 55] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [171, 161, 209, 219] },
+    { "class": "sheep", "bbox": [233, 174, 271, 224] },
+    { "class": "sheep", "bbox": [274, 184, 311, 226] },
+    { "class": "sheep", "bbox": [310, 202, 348, 227] },
+    { "class": "sheep", "bbox": [344, 204, 376, 226] },
+    { "class": "sheep", "bbox": [387, 213, 421, 224] },
+    { "class": "sheep", "bbox": [408, 204, 438, 224] },
+    { "class": "sheep", "bbox": [442, 204, 465, 224] },
+    { "class": "sheep", "bbox": [452, 204, 472, 224] },
+    { "class": "sheep", "bbox": [466, 204, 486, 220] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 336, 231] },
+    { "class": "sheep", "bbox": [397, 136, 500, 225] },
+    { "class": "sheep", "bbox": [1, 118, 55, 199] },
+    { "class": "sheep", "bbox": [1, 176, 61, 265] },
+    { "class": "sheep", "bbox": [1, 213, 58, 323] },
+    { "class": "sheep", "bbox": [1, 247, 65, 375] },
+    { "class": "sheep", "bbox": [1, 1, 58, 67] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-46179 result:
+  mAP@0.5:       0.744
+  mAP@0.5:0.95:  0.6852
+  AP_per_iou:    {0.5: 0.744, 0.55: 0.74, 0.6: 0.7345, 0.65: 0.6981, 0.7: 0.6941, 0.75: 0.6875, 0.8: 0.6778, 0.85: 0.6525, 0.9: 0.6308, 0.95: 0.5923}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [357, 71, 390, 151] },
+    { "class": "person", "bbox": [368, 85, 396, 159] },
+    { "class": "person", "bbox": [364, 94, 386, 151] },
+    { "class": "person", "bbox": [385, 80, 421, 151] },
+    { "class": "person", "bbox": [421, 85, 454, 153] },
+    { "class": "person", "bbox": [454, 94, 500, 154] },
+    { "class": "person", "bbox": [1, 50, 55, 197] },
+    { "class": "person", "bbox": [1, 103, 71, 375] },
+    { "class": "person", "bbox": [1, 1, 75, 375] },
+    { "class": "person", "bbox": [1, 1, 68, 74] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [479, 184, 496, 206] },
+    { "class": "person", "bbox": [1, 188, 19, 231] },
+    { "class": "person", "bbox": [98, 182, 120, 206] },
+    { "class": "person", "bbox": [117, 182, 152, 206] },
+    { "class": "person", "bbox": [150, 182, 181, 205] },
+    { "class": "person", "bbox": [181, 182, 206, 204] },
+    { "class": "person", "bbox": [204, 181, 241, 204] },
+    { "class": "person", "bbox": [241, 182, 279, 204] },
+    { "class": "person", "bbox": [275, 181, 310, 204] },
+    { "class": "person", "bbox": [309, 182, 344, 202] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [171, 72, 203, 191] },
+    { "class": "person", "bbox": [335, 73, 355, 188] },
+    { "class": "person", "bbox": [387, 77, 409, 188] },
+    { "class": "person", "bbox": [424, 77, 434, 188] },
+    { "class": "person", "bbox": [439, 77, 450, 188] },
+    { "class": "person", "bbox": [450, 77, 457, 188] },
+    { "class": "person", "bbox": [456, 77, 464, 188] },
+    { "class": "person", "bbox": [436, 77, 443, 188] },
+    { "class": "person", "bbox": [423, 77, 430, 188] },
+    { "class": "person", "bbox": [403, 77, 408, 188] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 72, 58, 333] },
+    { "class": "person", "bbox": [70, 83, 139, 333] },
+    { "class": "person", "bbox": [116, 78, 193, 333] },
+    { "class": "person", "bbox": [171, 85, 212, 333] },
+    { "class": "person", "bbox": [198, 78, 241, 333] },
+    { "class": "person", "bbox": [241, 77, 280, 333] },
+    { "class": "person", "bbox": [270, 85, 304, 333] },
+    { "class": "person", "bbox": [306, 85, 351, 333] },
+    { "class": "person", "bbox": [351, 85, 387, 333] },
+    { "class": "person", "bbox": [390, 85, 421, 333] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-46179 result:
+  mAP@0.5:       0.4052
+  mAP@0.5:0.95:  0.3243
+  AP_per_iou:    {0.5: 0.4052, 0.55: 0.3911, 0.6: 0.3692, 0.65: 0.3301, 0.7: 0.3218, 0.75: 0.3098, 0.8: 0.3009, 0.85: 0.2874, 0.9: 0.2735, 0.95: 0.2544}
+运行成功: checkpoint-46179 Mon Jan 27 04:13:40 CST 2025
+运行开始: checkpoint-51310 Mon Jan 27 04:13:40 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.04it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.13it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.34it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-51310
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-51310
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bottle", "bbox": [262, 387, 328, 500] },
+    { "class": "bottle", "bbox": [262, 250, 306, 357] },
+    { "class": "bottle", "bbox": [202, 294, 258, 395] },
+    { "class": "bottle", "bbox": [89, 329, 131, 386] },
+    { "class": "bottle", "bbox": [131, 174, 163, 231] },
+    { "class": "bottle", "bbox": [163, 174, 182, 235] },
+    { "class": "bottle", "bbox": [183, 176, 205, 233] },
+    { "class": "bottle", "bbox": [205, 175, 239, 240] },
+    { "class": "bottle", "bbox": [242, 173, 269, 242] },
+    { "class": "bottle", "bbox": [269, 177, 291, 242] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 39, 48, 70] },
+    { "class": "sheep", "bbox": [1, 46, 63, 102] },
+    { "class": "sheep", "bbox": [15, 52, 105, 103] },
+    { "class": "sheep", "bbox": [85, 59, 146, 107] },
+    { "class": "sheep", "bbox": [146, 59, 183, 102] },
+    { "class": "sheep", "bbox": [179, 59, 239, 102] },
+    { "class": "sheep", "bbox": [250, 59, 323, 103] },
+    { "class": "sheep", "bbox": [337, 62, 409, 102] },
+    { "class": "sheep", "bbox": [421, 59, 492, 103] },
+    { "class": "sheep", "bbox": [482, 58, 500, 102] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [171, 161, 243, 219] },
+    { "class": "sheep", "bbox": [171, 160, 250, 223] },
+    { "class": "sheep", "bbox": [141, 163, 188, 219] },
+    { "class": "sheep", "bbox": [162, 163, 184, 219] },
+    { "class": "sheep", "bbox": [185, 165, 208, 219] },
+    { "class": "sheep", "bbox": [208, 163, 244, 219] },
+    { "class": "sheep", "bbox": [245, 164, 267, 219] },
+    { "class": "sheep", "bbox": [267, 164, 291, 219] },
+    { "class": "sheep", "bbox": [291, 164, 306, 219] },
+    { "class": "sheep", "bbox": [305, 164, 330, 219] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [427, 167, 467, 267] },
+    { "class": "person", "bbox": [363, 174, 425, 269] },
+    { "class": "person", "bbox": [295, 181, 376, 303] },
+    { "class": "person", "bbox": [263, 173, 309, 284] },
+    { "class": "person", "bbox": [232, 174, 273, 283] },
+    { "class": "person", "bbox": [207, 174, 246, 283] },
+    { "class": "person", "bbox": [184, 174, 208, 281] },
+    { "class": "person", "bbox": [119, 174, 163, 281] },
+    { "class": "person", "bbox": [86, 174, 119, 281] },
+    { "class": "person", "bbox": [59, 174, 86, 281] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bottle", "bbox": [338, 276, 350, 314] },
+    { "class": "bottle", "bbox": [335, 271, 345, 311] },
+    { "class": "bottle", "bbox": [318, 270, 328, 311] },
+    { "class": "bottle", "bbox": [310, 270, 318, 309] },
+    { "class": "bottle", "bbox": [296, 259, 306, 309] },
+    { "class": "bottle", "bbox": [284, 259, 293, 308] },
+    { "class": "bottle", "bbox": [273, 259, 284, 308] },
+    { "class": "bottle", "bbox": [263, 259, 272, 308] },
+    { "class": "bottle", "bbox": [250, 259, 257, 308] },
+    { "class": "bottle", "bbox": [240, 259, 248, 308] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 349, 229] },
+    { "class": "sheep", "bbox": [231, 146, 284, 216] },
+    { "class": "sheep", "bbox": [207, 137, 252, 212] },
+    { "class": "sheep", "bbox": [183, 134, 208, 208] },
+    { "class": "sheep", "bbox": [165, 137, 188, 207] },
+    { "class": "sheep", "bbox": [134, 137, 162, 208] },
+    { "class": "sheep", "bbox": [106, 137, 133, 207] },
+    { "class": "sheep", "bbox": [86, 137, 106, 208] },
+    { "class": "sheep", "bbox": [58, 139, 86, 207] },
+    { "class": "sheep", "bbox": [41, 137, 67, 208] },
+    { "class": "sheep", "bbox": [15, 137, 43, 207
+--[train] /data3/lihl/llama-lora-output/checkpoint-51310 result:
+  mAP@0.5:       0.7723
+  mAP@0.5:0.95:  0.7212
+  AP_per_iou:    {0.5: 0.7723, 0.55: 0.7638, 0.6: 0.7511, 0.65: 0.7404, 0.7: 0.7261, 0.75: 0.7131, 0.8: 0.701, 0.85: 0.6965, 0.9: 0.6906, 0.95: 0.6568}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [261, 59, 316, 174] },
+    { "class": "person", "bbox": [319, 83, 349, 142] },
+    { "class": "person", "bbox": [334, 60, 357, 127] },
+    { "class": "person", "bbox": [287, 76, 304, 118] },
+    { "class": "person", "bbox": [264, 72, 289, 119] },
+    { "class": "person", "bbox": [237, 73, 264, 119] },
+    { "class": "person", "bbox": [206, 76, 233, 119] },
+    { "class": "person", "bbox": [179, 76, 206, 119] },
+    { "class": "person", "bbox": [134, 76, 171, 119] },
+    { "class": "person", "bbox": [108, 73, 137, 119] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [125, 130, 186, 214] },
+    { "class": "person", "bbox": [71, 108, 159, 257] },
+    { "class": "person", "bbox": [170, 108, 252, 258] },
+    { "class": "person", "bbox": [341, 108, 373, 202] },
+    { "class": "person", "bbox": [342, 116, 500, 375] },
+    { "class": "person", "bbox": [309, 103, 356, 142] },
+    { "class": "person", "bbox": [291, 109, 355, 159] },
+    { "class": "person", "bbox": [263, 107, 309, 157] },
+    { "class": "person", "bbox": [216, 103, 264, 142] },
+    { "class": "person", "bbox": [206, 103, 248, 148] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [465, 158, 500, 232] },
+    { "class": "person", "bbox": [425, 176, 475, 259] },
+    { "class": "person", "bbox": [362, 173, 448, 259] },
+    { "class": "person", "bbox": [336, 178, 366, 259] },
+    { "class": "person", "bbox": [310, 183, 348, 259] },
+    { "class": "person", "bbox": [287, 187, 335, 264] },
+    { "class": "person", "bbox": [264, 190, 294, 261] },
+    { "class": "person", "bbox": [237, 190, 264, 264] },
+    { "class": "person", "bbox": [215, 188, 240, 262] },
+    { "class": "person", "bbox": [203, 190, 239, 264] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [419, 151, 468, 333] },
+    { "class": "person", "bbox": [379, 138, 421, 311] },
+    { "class": "person", "bbox": [337, 139, 374, 319] },
+    { "class": "person", "bbox": [290, 137, 356, 333] },
+    { "class": "person", "bbox": [280, 132, 315, 319] },
+    { "class": "person", "bbox": [263, 139, 288, 319] },
+    { "class": "person", "bbox": [245, 139, 264, 319] },
+    { "class": "person", "bbox": [231, 137, 252, 319] },
+    { "class": "person", "bbox": [207, 137, 233, 319] },
+    { "class": "person", "bbox": [184, 137, 207, 319] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-51310 result:
+  mAP@0.5:       0.4288
+  mAP@0.5:0.95:  0.3539
+  AP_per_iou:    {0.5: 0.4288, 0.55: 0.4153, 0.6: 0.3939, 0.65: 0.3753, 0.7: 0.3539, 0.75: 0.3401, 0.8: 0.3235, 0.85: 0.3163, 0.9: 0.3078, 0.95: 0.2842}
+运行成功: checkpoint-51310 Mon Jan 27 04:27:10 CST 2025
+运行开始: checkpoint-56441 Mon Jan 27 04:27:10 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.06it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.07it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.57it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.35it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-56441
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-56441
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [373, 90, 478, 307] },
+    { "class": "person", "bbox": [146, 124, 203, 375] },
+    { "class": "person", "bbox": [40, 77, 97, 278] },
+    { "class": "person", "bbox": [1, 125, 29, 375] },
+    { "class": "person", "bbox": [1, 116, 60, 248] },
+    { "class": "person", "bbox": [1, 89, 65, 231] },
+    { "class": "person", "bbox": [1, 92, 38, 218] },
+    { "class": "person", "bbox": [1, 88, 1, 159] },
+    { "class": "person", "bbox": [1, 93, 1, 153] },
+    { "class": "person", "bbox": [1, 91, 1, 125] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 180, 55, 210] },
+    { "class": "sheep", "bbox": [1, 154, 61, 208] },
+    { "class": "sheep", "bbox": [55, 153, 87, 208] },
+    { "class": "sheep", "bbox": [64, 153, 111, 208] },
+    { "class": "sheep", "bbox": [88, 153, 130, 208] },
+    { "class": "sheep", "bbox": [125, 153, 182, 208] },
+    { "class": "sheep", "bbox": [186, 153, 245, 208] },
+    { "class": "sheep", "bbox": [250, 153, 316, 208] },
+    { "class": "sheep", "bbox": [316, 153, 380, 208] },
+    { "class": "sheep", "bbox": [380, 153, 450, 208] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [1, 1, 16, 66] },
+    { "class": "bird", "bbox": [98, 1, 146, 21] },
+    { "class": "bird", "bbox": [132, 1, 198, 24] },
+    { "class": "bird", "bbox": [198, 1, 245, 26] },
+    { "class": "bird", "bbox": [250, 1, 302, 27] },
+    { "class": "bird", "bbox": [298, 1, 351, 27] },
+    { "class": "bird", "bbox": [353, 1, 412, 27] },
+    { "class": "bird", "bbox": [416, 1, 473, 27] },
+    { "class": "bird", "bbox": [473, 1, 500, 27] },
+    { "class": "bird", "bbox": [1, 121, 47, 198] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [390, 152, 454, 302] },
+    { "class": "person", "bbox": [104, 163, 163, 275] },
+    { "class": "person", "bbox": [1, 147, 32, 304] },
+    { "class": "person", "bbox": [21, 146, 60, 275] },
+    { "class": "person", "bbox": [32, 147, 71, 274] },
+    { "class": "person", "bbox": [61, 147, 98, 275] },
+    { "class": "person", "bbox": [91, 147, 132, 274] },
+    { "class": "person", "bbox": [132, 147, 179, 275] },
+    { "class": "person", "bbox": [179, 147, 215, 274] },
+    { "class": "person", "bbox": [215, 147, 245, 275] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 56, 69, 241] },
+    { "class": "person", "bbox": [144, 72, 225, 243] },
+    { "class": "person", "bbox": [290, 42, 394, 234] },
+    { "class": "person", "bbox": [386, 32, 425, 151] },
+    { "class": "person", "bbox": [422, 32, 458, 91] },
+    { "class": "person", "bbox": [457, 32, 500, 86] },
+    { "class": "person", "bbox": [130, 36, 162, 70] },
+    { "class": "person", "bbox": [159, 35, 181, 61] },
+    { "class": "person", "bbox": [177, 35, 198, 61] },
+    { "class": "person", "bbox": [194, 35, 221, 59] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 346, 220] },
+    { "class": "sheep", "bbox": [1, 141, 61, 220] },
+    { "class": "sheep", "bbox": [1, 121, 27, 171] },
+    { "class": "sheep", "bbox": [1, 108, 27, 137] },
+    { "class": "sheep", "bbox": [1, 89, 29, 108] },
+    { "class": "sheep", "bbox": [1, 72, 29, 91] },
+    { "class": "sheep", "bbox": [1, 63, 28, 87] },
+    { "class": "sheep", "bbox": [1, 55, 27, 87] },
+    { "class": "sheep", "bbox": [1, 46, 29, 87] },
+    { "class": "sheep", "bbox": [1, 28, 27, 53] },
+    { "class": "sheep", "bbox": [1, 21, 27, 38
+--[train] /data3/lihl/llama-lora-output/checkpoint-56441 result:
+  mAP@0.5:       0.8539
+  mAP@0.5:0.95:  0.8027
+  AP_per_iou:    {0.5: 0.8539, 0.55: 0.8382, 0.6: 0.8313, 0.65: 0.8263, 0.7: 0.8142, 0.75: 0.8003, 0.8: 0.7809, 0.85: 0.7781, 0.9: 0.7594, 0.95: 0.7442}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [180, 130, 231, 318] },
+    { "class": "person", "bbox": [228, 151, 297, 302] },
+    { "class": "person", "bbox": [286, 146, 362, 318] },
+    { "class": "person", "bbox": [322, 132, 391, 306] },
+    { "class": "person", "bbox": [380, 130, 458, 280] },
+    { "class": "person", "bbox": [425, 133, 500, 279] },
+    { "class": "person", "bbox": [1, 125, 20, 218] },
+    { "class": "person", "bbox": [1, 144, 27, 218] },
+    { "class": "person", "bbox": [1, 144, 20, 217] },
+    { "class": "person", "bbox": [1, 221, 20, 287] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "dog", "bbox": [1, 118, 285, 7 7] }]
+}
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [89, 79, 266, 375] },
+    { "class": "person", "bbox": [92, 79, 301, 375] },
+    { "class": "person", "bbox": [262, 122, 366, 375] },
+    { "class": "person", "bbox": [327, 79, 500, 375] },
+    { "class": "person", "bbox": [298, 44, 500, 375] },
+    { "class": "person", "bbox": [279, 72, 348, 375] },
+    { "class": "person", "bbox": [271, 1, 334, 70] },
+    { "class": "person", "bbox": [1, 1, 98, 375] },
+    { "class": "person", "bbox": [1, 1, 82, 375] },
+    { "class": "person", "bbox": [1, 1, 98, 375] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [290, 32, 356, 117] },
+    { "class": "person", "bbox": [115, 32, 170, 126] },
+    { "class": "person", "bbox": [213, 2, 252, 63] },
+    { "class": "person", "bbox": [1, 2, 26, 65] },
+    { "class": "person", "bbox": [24, 1, 61, 65] },
+    { "class": "person", "bbox": [61, 1, 107, 69] },
+    { "class": "person", "bbox": [99, 1, 157, 68] },
+    { "class": "person", "bbox": [169, 1, 218, 68] },
+    { "class": "person", "bbox": [213, 1, 272, 68] },
+    { "class": "person", "bbox": [280, 1, 333, 68] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [107, 107, 198, 333] },
+    { "class": "person", "bbox": [172, 117, 217, 333] },
+    { "class": "person", "bbox": [242, 138, 297, 333] },
+    { "class": "person", "bbox": [270, 116, 320, 333] },
+    { "class": "person", "bbox": [338, 133, 362, 155] },
+    { "class": "person", "bbox": [380, 121, 408, 153] },
+    { "class": "person", "bbox": [422, 122, 451, 154] },
+    { "class": "person", "bbox": [450, 121, 474, 154] },
+    { "class": "person", "bbox": [474, 121, 500, 154] },
+    { "class": "person", "bbox": [467, 116, 500, 150] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-56441 result:
+  mAP@0.5:       0.4774
+  mAP@0.5:0.95:  0.3897
+  AP_per_iou:    {0.5: 0.4774, 0.55: 0.4529, 0.6: 0.4373, 0.65: 0.4047, 0.7: 0.3833, 0.75: 0.3737, 0.8: 0.3568, 0.85: 0.3499, 0.9: 0.3342, 0.95: 0.3272}
+运行成功: checkpoint-56441 Mon Jan 27 04:40:48 CST 2025
+运行开始: checkpoint-61572 Mon Jan 27 04:40:48 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.04it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.07it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.15it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.59it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.37it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-61572
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-61572
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 70, 48, 216] },
+    { "class": "sheep", "bbox": [1, 73, 102, 224] },
+    { "class": "sheep", "bbox": [102, 60, 189, 137] },
+    { "class": "sheep", "bbox": [164, 66, 266, 166] },
+    { "class": "sheep", "bbox": [285, 60, 355, 134] },
+    { "class": "sheep", "bbox": [351, 68, 406, 128] },
+    { "class": "sheep", "bbox": [366, 67, 430, 133] },
+    { "class": "sheep", "bbox": [297, 140, 500, 281] },
+    { "class": "sheep", "bbox": [1, 138, 100, 281] },
+    { "class": "sheep", "bbox": [199, 138, 323, 224] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [298, 42, 355, 76] },
+    { "class": "bird", "bbox": [252, 46, 304, 77] },
+    { "class": "bird", "bbox": [357, 57, 398, 93] },
+    { "class": "bird", "bbox": [398, 107, 424, 134] },
+    { "class": "bird", "bbox": [424, 122, 447, 147] },
+    { "class": "bird", "bbox": [447, 121, 472, 146] },
+    { "class": "bird", "bbox": [472, 113, 500, 147] },
+    { "class": "bird", "bbox": [1, 122, 25, 147] },
+    { "class": "bird", "bbox": [170, 105, 203, 131] },
+    { "class": "bird", "bbox": [140, 112, 169, 134] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bottle", "bbox": [338, 276, 350, 314] },
+    { "class": "bottle", "bbox": [335, 271, 345, 311] },
+    { "class": "bottle", "bbox": [333, 276, 345, 314] },
+    { "class": "bottle", "bbox": [345, 280, 359, 314] },
+    { "class": "bottle", "bbox": [359, 278, 372, 314] },
+    { "class": "bottle", "bbox": [374, 278, 389, 314] },
+    { "class": "bottle", "bbox": [389, 278, 404, 314] },
+    { "class": "bottle", "bbox": [404, 278, 420, 314] },
+    { "class": "bottle", "bbox": [418, 278, 427, 314] },
+    { "class": "bottle", "bbox": [430, 278, 442, 314] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 355, 222] },
+    { "class": "sheep", "bbox": [325, 146, 388, 228] },
+    { "class": "sheep", "bbox": [386, 148, 439, 215] },
+    { "class": "sheep", "bbox": [436, 147, 500, 210] },
+    { "class": "sheep", "bbox": [1, 146, 53, 222] },
+    { "class": "sheep", "bbox": [1, 111, 36, 146] },
+    { "class": "sheep", "bbox": [57, 107, 96, 134] },
+    { "class": "sheep", "bbox": [100, 110, 128, 134] },
+    { "class": "sheep", "bbox": [125, 107, 157, 131] },
+    { "class": "sheep", "bbox": [171, 107, 203, 133] },
+    { "class": "sheep", "bbox": [202, 107, 227, 134
+--[train] /data3/lihl/llama-lora-output/checkpoint-61572 result:
+  mAP@0.5:       0.8386
+  mAP@0.5:0.95:  0.7944
+  AP_per_iou:    {0.5: 0.8386, 0.55: 0.8216, 0.6: 0.8112, 0.65: 0.8048, 0.7: 0.8034, 0.75: 0.7893, 0.8: 0.778, 0.85: 0.778, 0.9: 0.7644, 0.95: 0.7547}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 137, 43, 368] },
+    { "class": "person", "bbox": [61, 141, 126, 375] },
+    { "class": "person", "bbox": [118, 124, 171, 248] },
+    { "class": "person", "bbox": [166, 137, 210, 198] },
+    { "class": "person", "bbox": [207, 134, 239, 177] },
+    { "class": "person", "bbox": [227, 126, 270, 192] },
+    { "class": "person", "bbox": [256, 133, 285, 177] },
+    { "class": "person", "bbox": [285, 125, 321, 192] },
+    { "class": "person", "bbox": [318, 126, 357, 192] },
+    { "class": "person", "bbox": [353, 121, 386, 192] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [247, 1, 409, 375] },
+    { "class": "person", "bbox": [56, 2, 345, 375] },
+    { "class": "person", "bbox": [31, 1, 227, 375] },
+    { "class": "person", "bbox": [344, 1, 500, 375] },
+    { "class": "person", "bbox": [1, 1, 134, 375] },
+    { "class": "person", "bbox": [311, 1, 500, 375] },
+    { "class": "person", "bbox": [1, 1, 117, 375] },
+    { "class": "person", "bbox": [113, 1, 239, 375] },
+    { "class": "person", "bbox": [185, 1, 261, 375] },
+    { "class": "person", "bbox": [261, 1, 327, 69] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "chair", "bbox": [351, 184, 500, 375] },
+    { "class": "chair", "bbox": [1, 154, 172, 266] },
+    { "class": "chair", "bbox": [180, 193, 303, 375] },
+    { "class": "chair", "bbox": [305, 193, 366, 280] },
+    { "class": "chair", "bbox": [366, 192, 394, 266] },
+    { "class": "chair", "bbox": [367, 177, 390, 245] },
+    { "class": "chair", "bbox": [369, 175, 390, 228] },
+    { "class": "chair", "bbox": [390, 173, 419, 220] },
+    { "class": "chair", "bbox": [424, 175, 445, 209] },
+    { "class": "chair", "bbox": [445, 176, 470, 210] },
+    { "class": "chair", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-61572 result:
+  mAP@0.5:       0.4517
+  mAP@0.5:0.95:  0.3787
+  AP_per_iou:    {0.5: 0.4517, 0.55: 0.4258, 0.6: 0.4017, 0.65: 0.3858, 0.7: 0.3806, 0.75: 0.3687, 0.8: 0.3507, 0.85: 0.3476, 0.9: 0.3417, 0.95: 0.3329}
+运行成功: checkpoint-61572 Mon Jan 27 04:54:35 CST 2025
+运行开始: checkpoint-66703 Mon Jan 27 04:54:35 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.03it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.07it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.15it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.36it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-66703
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-66703
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [369, 216, 429, 253] },
+    { "class": "sheep", "bbox": [212, 202, 263, 252] },
+    { "class": "sheep", "bbox": [98, 186, 150, 232] },
+    { "class": "sheep", "bbox": [125, 183, 183, 219] },
+    { "class": "sheep", "bbox": [186, 179, 208, 202] },
+    { "class": "sheep", "bbox": [58, 220, 111, 267] },
+    { "class": "sheep", "bbox": [86, 220, 129, 252] },
+    { "class": "sheep", "bbox": [125, 220, 183, 249] },
+    { "class": "sheep", "bbox": [182, 219, 233, 252] },
+    { "class": "sheep", "bbox": [252, 219, 305, 261] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [243, 42, 283, 85] },
+    { "class": "bird", "bbox": [287, 61, 317, 86] },
+    { "class": "bird", "bbox": [409, 66, 430, 85] },
+    { "class": "bird", "bbox": [425, 66, 454, 86] },
+    { "class": "bird", "bbox": [451, 66, 473, 86] },
+    { "class": "bird", "bbox": [478, 67, 500, 85] },
+    { "class": "bird", "bbox": [357, 240, 405, 280] },
+    { "class": "bird", "bbox": [403, 262, 450, 283] },
+    { "class": "bird", "bbox": [432, 266, 458, 278] },
+    { "class": "bird", "bbox": [458, 267, 493, 279] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bottle", "bbox": [399, 143, 407, 169] },
+    { "class": "bottle", "bbox": [404, 143, 413, 170] },
+    { "class": "bottle", "bbox": [413, 143, 422, 170] },
+    { "class": "bottle", "bbox": [420, 143, 427, 170] },
+    { "class": "bottle", "bbox": [427, 143, 437, 170] },
+    { "class": "bottle", "bbox": [435, 143, 441, 170] },
+    { "class": "bottle", "bbox": [461, 143, 466, 170] },
+    { "class": "bottle", "bbox": [459, 143, 459, 170] },
+    { "class": "bottle", "bbox": [454, 143, 459, 170] },
+    { "class": "bottle", "bbox": [445, 143, 450, 170] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 299, 23, 358] },
+    { "class": "person", "bbox": [14, 268, 63, 358] },
+    { "class": "person", "bbox": [56, 271, 85, 358] },
+    { "class": "person", "bbox": [86, 275, 100, 357] },
+    { "class": "person", "bbox": [117, 275, 132, 352] },
+    { "class": "person", "bbox": [135, 275, 152, 351] },
+    { "class": "person", "bbox": [150, 275, 163, 351] },
+    { "class": "person", "bbox": [161, 275, 174, 351] },
+    { "class": "person", "bbox": [322, 301, 347, 351] },
+    { "class": "person", "bbox": [345, 300, 358, 347] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 355, 231] },
+    { "class": "sheep", "bbox": [385, 147, 450, 231] },
+    { "class": "sheep", "bbox": [464, 147, 500, 231] },
+    { "class": "sheep", "bbox": [430, 147, 500, 231] },
+    { "class": "sheep", "bbox": [1, 140, 50, 245] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-66703 result:
+  mAP@0.5:       0.8583
+  mAP@0.5:0.95:  0.7904
+  AP_per_iou:    {0.5: 0.8583, 0.55: 0.8499, 0.6: 0.8382, 0.65: 0.825, 0.7: 0.7932, 0.75: 0.7793, 0.8: 0.7613, 0.85: 0.76, 0.9: 0.7231, 0.95: 0.7161}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "aeroplane", "bbox": [96, 82, 136, 110] },
+    { "class": "aeroplane", "bbox": [312, 117, 337, 146] },
+    { "class": "aeroplane", "bbox": [156, 189, 178, 204] },
+    { "class": "aeroplane", "bbox": [178, 190, 195, 204] },
+    { "class": "aeroplane", "bbox": [195, 195, 210, 204] },
+    { "class": "aeroplane", "bbox": [212, 188, 228, 204] },
+    { "class": "aeroplane", "bbox": [227, 188, 244, 204] },
+    { "class": "aeroplane", "bbox": [242, 195, 266, 204] },
+    { "class": "aeroplane", "bbox": [266, 189, 283, 204] },
+    { "class": "a
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [471, 259, 500, 301] },
+    { "class": "person", "bbox": [411, 264, 422, 301] },
+    { "class": "person", "bbox": [336, 259, 361, 301] },
+    { "class": "person", "bbox": [286, 259, 317, 301] },
+    { "class": "person", "bbox": [219, 259, 250, 301] },
+    { "class": "person", "bbox": [178, 259, 202, 301] },
+    { "class": "person", "bbox": [162, 259, 176, 301] },
+    { "class": "person", "bbox": [139, 259, 153, 301] },
+    { "class": "person", "bbox": [122, 259, 137, 301] },
+    { "class": "person", "bbox": [100, 259, 116, 301] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [336, 130, 366, 229] },
+    { "class": "person", "bbox": [433, 159, 452, 193] },
+    { "class": "person", "bbox": [356, 169, 371, 217] },
+    { "class": "person", "bbox": [364, 165, 380, 217] },
+    { "class": "person", "bbox": [346, 163, 358, 217] },
+    { "class": "person", "bbox": [337, 163, 352, 217] },
+    { "class": "person", "bbox": [333, 166, 341, 217] },
+    { "class": "person", "bbox": [294, 167, 308, 217] },
+    { "class": "person", "bbox": [286, 167, 292, 217] },
+    { "class": "person", "bbox": [272, 167, 284, 219] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "aeroplane", "bbox": [1, 47, 46, 81] },
+    { "class": "aeroplane", "bbox": [7, 117, 63, 151] },
+    { "class": "aeroplane", "bbox": [48, 149, 87, 178] },
+    { "class": "aeroplane", "bbox": [86, 166, 129, 195] },
+    { "class": "aeroplane", "bbox": [122, 173, 183, 199] },
+    { "class": "aeroplane", "bbox": [183, 178, 249, 200] },
+    { "class": "aeroplane", "bbox": [242, 178, 310, 198] },
+    { "class": "aeroplane", "bbox": [304, 195, 370, 217] },
+    { "class": "aeroplane", "bbox": [371, 195, 433, 218] },
+    { "class": "a
+--[test] /data3/lihl/llama-lora-output/checkpoint-66703 result:
+  mAP@0.5:       0.4681
+  mAP@0.5:0.95:  0.3904
+  AP_per_iou:    {0.5: 0.4681, 0.55: 0.4516, 0.6: 0.4285, 0.65: 0.3989, 0.7: 0.3863, 0.75: 0.3768, 0.8: 0.3645, 0.85: 0.3561, 0.9: 0.3395, 0.95: 0.334}
+运行成功: checkpoint-66703 Mon Jan 27 05:08:09 CST 2025
+运行开始: checkpoint-71834 Mon Jan 27 05:08:09 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.03it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.06it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.13it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.35it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-71834
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-71834
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [171, 161, 243, 219] },
+    { "class": "sheep", "bbox": [171, 160, 250, 223] },
+    { "class": "sheep", "bbox": [227, 189, 274, 223] },
+    { "class": "sheep", "bbox": [251, 184, 291, 216] },
+    { "class": "sheep", "bbox": [320, 203, 357, 227] },
+    { "class": "sheep", "bbox": [327, 202, 370, 227] },
+    { "class": "sheep", "bbox": [370, 204, 404, 226] },
+    { "class": "sheep", "bbox": [400, 199, 444, 228] },
+    { "class": "sheep", "bbox": [444, 202, 492, 231] },
+    { "class": "sheep", "bbox": [491, 202, 500, 228] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [208, 202, 238, 319] },
+    { "class": "person", "bbox": [185, 203, 208, 319] },
+    { "class": "person", "bbox": [242, 208, 266, 232] },
+    { "class": "person", "bbox": [267, 191, 300, 229] },
+    { "class": "person", "bbox": [285, 206, 307, 226] },
+    { "class": "person", "bbox": [300, 205, 318, 226] },
+    { "class": "person", "bbox": [320, 203, 340, 228] },
+    { "class": "person", "bbox": [334, 204, 347, 228] },
+    { "class": "person", "bbox": [347, 203, 367, 228] },
+    { "class": "person", "bbox": [363, 202, 381, 228] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 349, 231] },
+    { "class": "sheep", "bbox": [1, 144, 36, 220] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-71834 result:
+  mAP@0.5:       0.8173
+  mAP@0.5:0.95:  0.7745
+  AP_per_iou:    {0.5: 0.8173, 0.55: 0.8127, 0.6: 0.7956, 0.65: 0.7793, 0.7: 0.7776, 0.75: 0.7752, 0.8: 0.7752, 0.85: 0.7447, 0.9: 0.7407, 0.95: 0.7263}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [106, 47, 377, 375] },
+    { "class": "person", "bbox": [81, 131, 348, 375] },
+    { "class": "person", "bbox": [67, 234, 153, 375] },
+    { "class": "person", "bbox": [1, 101, 106, 375] },
+    { "class": "person", "bbox": [354, 42, 500, 375] },
+    { "class": "person", "bbox": [361, 1, 421, 234] },
+    { "class": "person", "bbox": [397, 1, 451, 236] },
+    { "class": "person", "bbox": [446, 1, 500, 236] },
+    { "class": "person", "bbox": [250, 1, 305, 235] },
+    { "class": "person", "bbox": [320, 1, 364, 231] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [463, 172, 500, 333] },
+    { "class": "person", "bbox": [451, 172, 468, 200] },
+    { "class": "person", "bbox": [410, 170, 457, 282] },
+    { "class": "person", "bbox": [363, 169, 409, 277] },
+    { "class": "person", "bbox": [323, 172, 373, 280] },
+    { "class": "person", "bbox": [307, 173, 344, 228] },
+    { "class": "person", "bbox": [293, 173, 335, 228] },
+    { "class": "person", "bbox": [285, 173, 312, 220] },
+    { "class": "person", "bbox": [283, 176, 304, 210] },
+    { "class": "person", "bbox": [285, 174, 307, 210] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-71834 result:
+  mAP@0.5:       0.4529
+  mAP@0.5:0.95:  0.3836
+  AP_per_iou:    {0.5: 0.4529, 0.55: 0.433, 0.6: 0.4139, 0.65: 0.3939, 0.7: 0.3825, 0.75: 0.3751, 0.8: 0.3676, 0.85: 0.343, 0.9: 0.3412, 0.95: 0.3327}
+运行成功: checkpoint-71834 Mon Jan 27 05:21:16 CST 2025
+运行开始: checkpoint-76965 Mon Jan 27 05:21:16 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.04it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.03it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.09it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.52it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.31it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-76965
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-76965
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [369, 216, 500, 281] },
+    { "class": "sheep", "bbox": [323, 203, 454, 280] },
+    { "class": "sheep", "bbox": [7, 146, 124, 199] },
+    { "class": "sheep", "bbox": [90, 96, 181, 199] },
+    { "class": "sheep", "bbox": [185, 78, 211, 103] },
+    { "class": "sheep", "bbox": [268, 83, 311, 106] },
+    { "class": "sheep", "bbox": [312, 78, 364, 103] },
+    { "class": "sheep", "bbox": [359, 76, 411, 104] },
+    { "class": "sheep", "bbox": [404, 75, 457, 103] },
+    { "class": "sheep", "bbox": [457, 74, 500, 104] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 338, 229] },
+    { "class": "sheep", "bbox": [340, 147, 396, 238] },
+    { "class": "sheep", "bbox": [388, 147, 439, 240] },
+    { "class": "sheep", "bbox": [439, 147, 500, 238] },
+    { "class": "sheep", "bbox": [1, 143, 64, 238] },
+    { "class": "sheep", "bbox": [1, 238, 40, 315] },
+    { "class": "sheep", "bbox": [1, 312, 48, 375] },
+    { "class": "sheep", "bbox": [1, 312, 64, 375] },
+    { "class": "sheep", "bbox": [1, 312, 40, 375] },
+    { "class": "sheep", "bbox": [1, 312, 64, 375] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-76965 result:
+  mAP@0.5:       0.8879
+  mAP@0.5:0.95:  0.8438
+  AP_per_iou:    {0.5: 0.8879, 0.55: 0.8846, 0.6: 0.8754, 0.65: 0.8518, 0.7: 0.8457, 0.75: 0.8444, 0.8: 0.8296, 0.85: 0.8271, 0.9: 0.8094, 0.95: 0.7816}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [75, 103, 139, 220] },
+    { "class": "person", "bbox": [144, 110, 182, 199] },
+    { "class": "person", "bbox": [182, 110, 238, 202] },
+    { "class": "person", "bbox": [260, 110, 321, 209] },
+    { "class": "person", "bbox": [304, 109, 363, 209] },
+    { "class": "person", "bbox": [341, 104, 408, 209] },
+    { "class": "person", "bbox": [374, 104, 415, 211] },
+    { "class": "person", "bbox": [404, 103, 456, 209] },
+    { "class": "person", "bbox": [457, 104, 500, 211] },
+    { "class": "person", "bbox": [443, 117, 500, 211] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [82, 203, 237, 375] },
+    { "class": "person", "bbox": [190, 117, 472, 375] },
+    { "class": "person", "bbox": [298, 1, 500, 234] },
+    { "class": "person", "bbox": [1, 1, 118, 190] },
+    { "class": "person", "bbox": [1, 127, 68, 305] },
+    { "class": "person", "bbox": [119, 1, 242, 136] },
+    { "class": "person", "bbox": [252, 1, 297, 70] },
+    { "class": "person", "bbox": [274, 1, 330, 71] },
+    { "class": "person", "bbox": [286, 1, 329, 70] },
+    { "class": "person", "bbox": [332, 1, 374, 70] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-76965 result:
+  mAP@0.5:       0.4915
+  mAP@0.5:0.95:  0.4206
+  AP_per_iou:    {0.5: 0.4915, 0.55: 0.4744, 0.6: 0.4593, 0.65: 0.4389, 0.7: 0.4188, 0.75: 0.4032, 0.8: 0.3923, 0.85: 0.3873, 0.9: 0.3789, 0.95: 0.3616}
+运行成功: checkpoint-76965 Mon Jan 27 05:34:19 CST 2025
+运行开始: checkpoint-82096 Mon Jan 27 05:34:19 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.04s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.02it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.11it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.55it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.32it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-82096
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-82096
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 355, 234] },
+    { "class": "sheep", "bbox": [378, 139, 439, 239] },
+    { "class": "sheep", "bbox": [416, 131, 467, 194] },
+    { "class": "sheep", "bbox": [199, 126, 250, 164] },
+    { "class": "sheep", "bbox": [1, 88, 61, 157] },
+    { "class": "sheep", "bbox": [1, 97, 19, 131] },
+    { "class": "sheep", "bbox": [1, 109, 20, 145] },
+    { "class": "sheep", "bbox": [1, 125, 20, 157] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-82096 result:
+  mAP@0.5:       0.8372
+  mAP@0.5:0.95:  0.7915
+  AP_per_iou:    {0.5: 0.8372, 0.55: 0.8328, 0.6: 0.8025, 0.65: 0.7935, 0.7: 0.7919, 0.75: 0.7836, 0.8: 0.7783, 0.85: 0.7685, 0.9: 0.7679, 0.95: 0.7587}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [167, 60, 200, 145] },
+    { "class": "person", "bbox": [239, 84, 316, 163] },
+    { "class": "person", "bbox": [341, 70, 373, 143] },
+    { "class": "person", "bbox": [322, 94, 346, 153] },
+    { "class": "person", "bbox": [300, 96, 322, 140] },
+    { "class": "person", "bbox": [294, 78, 309, 125] },
+    { "class": "person", "bbox": [280, 85, 287, 122] },
+    { "class": "person", "bbox": [271, 88, 284, 122] },
+    { "class": "person", "bbox": [245, 78, 257, 114] },
+    { "class": "person", "bbox": [228, 84, 242, 122] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-82096 result:
+  mAP@0.5:       0.4319
+  mAP@0.5:0.95:  0.361
+  AP_per_iou:    {0.5: 0.4319, 0.55: 0.4162, 0.6: 0.3833, 0.65: 0.3703, 0.7: 0.3644, 0.75: 0.3434, 0.8: 0.3345, 0.85: 0.3252, 0.9: 0.3248, 0.95: 0.3161}
+运行成功: checkpoint-82096 Mon Jan 27 05:47:04 CST 2025
+运行开始: checkpoint-87227 Mon Jan 27 05:47:04 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.04it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.07it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.36it/s]Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-87227
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-87227
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [449, 77, 500, 334] },
+    { "class": "person", "bbox": [318, 78, 372, 174] },
+    { "class": "person", "bbox": [316, 115, 364, 216] },
+    { "class": "person", "bbox": [238, 91, 362, 375] },
+    { "class": "person", "bbox": [102, 89, 172, 279] },
+    { "class": "person", "bbox": [144, 90, 203, 252] },
+    { "class": "person", "bbox": [190, 89, 271, 279] },
+    { "class": "person", "bbox": [248, 90, 292, 252] },
+    { "class": "person", "bbox": [276, 89, 333, 279] },
+    { "class": "person", "bbox": [312, 90, 374, 252] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [36, 90, 176, 332] },
+    { "class": "person", "bbox": [139, 104, 217, 288] },
+    { "class": "person", "bbox": [260, 135, 321, 288] },
+    { "class": "person", "bbox": [342, 108, 408, 155] },
+    { "class": "person", "bbox": [336, 93, 388, 156] },
+    { "class": "person", "bbox": [421, 115, 478, 288] },
+    { "class": "person", "bbox": [411, 93, 467, 287] },
+    { "class": "person", "bbox": [388, 89, 408, 121] },
+    { "class": "person", "bbox": [371, 93, 403, 115] },
+    { "class": "person", "bbox": [400, 93, 417, 108] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "aeroplane", "bbox":12, 22, 489, 448] }]
+}
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [369, 216, 439, 253] },
+    { "class": "sheep", "bbox": [323, 149, 439, 190] },
+    { "class": "sheep", "bbox": [247, 166, 362, 232] },
+    { "class": "sheep", "bbox": [196, 160, 287, 222] },
+    { "class": "sheep", "bbox": [114, 166, 250, 257] },
+    { "class": "sheep", "bbox": [52, 215, 177, 280] },
+    { "class": "sheep", "bbox": [1, 215, 55, 281] },
+    { "class": "sheep", "bbox": [1, 154, 67, 200] },
+    { "class": "sheep", "bbox": [1, 166, 24, 212] },
+    { "class": "sheep", "bbox": [115, 154, 145, 173] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "bird", "bbox": [243, 42, 343, 129] },
+    { "class": "bird", "bbox": [457, 152, 483, 229] },
+    { "class": "bird", "bbox": [298, 182, 387, 244] },
+    { "class": "bird", "bbox": [55, 113, 120, 154] },
+    { "class": "bird", "bbox": [25, 124, 61, 158] },
+    { "class": "bird", "bbox": [1, 205, 30, 243] },
+    { "class": "bird", "bbox": [387, 306, 424, 346] },
+    { "class": "bird", "bbox": [269, 285, 332, 358] },
+    { "class": "bird", "bbox": [165, 285, 241, 360] },
+    { "class": "bird", "bbox": [150, 265, 200, 319] },
+    { "class": "bird", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [224, 162, 264, 194] },
+    { "class": "person", "bbox": [273, 155, 314, 190] },
+    { "class": "person", "bbox": [281, 170, 336, 293] },
+    { "class": "person", "bbox": [207, 164, 224, 225] },
+    { "class": "person", "bbox": [190, 160, 217, 212] },
+    { "class": "person", "bbox": [61, 167, 93, 218] },
+    { "class": "person", "bbox": [19, 170, 41, 218] },
+    { "class": "person", "bbox": [96, 170, 121, 218] },
+    { "class": "person", "bbox": [61, 174, 72, 209] },
+    { "class": "person", "bbox": [14, 170, 28, 213] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 321, 194] },
+    { "class": "sheep", "bbox": [1, 143, 35, 195] },
+    { "class": "sheep", "bbox": [1, 166, 39, 245] },
+    { "class": "sheep", "bbox": [1, 192, 17, 252] },
+    { "class": "sheep", "bbox": [1, 243, 18, 315] },
+    { "class": "sheep", "bbox": [1, 315, 18, 375] },
+    { "class": "sheep", "bbox": [1, 337, 18, 375] },
+    { "class": "sheep", "bbox": [1, 373, 18, 401] },
+    { "class": "sheep", "bbox": [1, 386, 18, 411] },
+    { "class": "sheep", "bbox": [1, 411, 17, 432] },
+    { "class": "sheep", "bbox": [1, 433, 18, 473
+--[train] /data3/lihl/llama-lora-output/checkpoint-87227 result:
+  mAP@0.5:       0.8901
+  mAP@0.5:0.95:  0.8478
+  AP_per_iou:    {0.5: 0.8901, 0.55: 0.8801, 0.6: 0.8792, 0.65: 0.8724, 0.7: 0.8473, 0.75: 0.8417, 0.8: 0.8255, 0.85: 0.8255, 0.9: 0.825, 0.95: 0.7915}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [420, 154, 471, 312] },
+    { "class": "person", "bbox": [386, 144, 423, 310] },
+    { "class": "person", "bbox": [351, 150, 383, 307] },
+    { "class": "person", "bbox": [278, 149, 331, 319] },
+    { "class": "person", "bbox": [266, 163, 294, 310] },
+    { "class": "person", "bbox": [93, 164, 114, 255] },
+    { "class": "person", "bbox": [71, 165, 82, 217] },
+    { "class": "person", "bbox": [61, 170, 70, 198] },
+    { "class": "person", "bbox": [48, 170, 57, 199] },
+    { "class": "person", "bbox": [12, 170, 30, 202] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "chair", "bbox": [436, 253, 500, 375] },
+    { "class": "chair", "bbox": [344, 243, 425, 375] },
+    { "class": "chair", "bbox": [326, 230, 353, 275] },
+    { "class": "chair", "bbox": [171, 216, 204, 282] },
+    { "class": "chair", "bbox": [97, 310, 139, 375] },
+    { "class": "chair", "bbox": [256, 232, 281, 265] },
+    { "class": "chair", "bbox": [68, 236, 102, 311] },
+    { "class": "chair", "bbox": [19, 241, 61, 304] },
+    { "class": "chair", "bbox": [1, 238, 29, 286] },
+    { "class": "chair", "bbox": [19, 241, 43, 275] },
+    { "class": "chair", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [73, 68, 188, 199] },
+    { "class": "person", "bbox": [187, 103, 229, 199] },
+    { "class": "person", "bbox": [171, 109, 248, 199] },
+    { "class": "person", "bbox": [253, 130, 306, 197] },
+    { "class": "person", "bbox": [279, 108, 383, 199] },
+    { "class": "person", "bbox": [286, 82, 383, 193] },
+    { "class": "person", "bbox": [286, 106, 362, 199] },
+    { "class": "person", "bbox": [376, 98, 421, 199] },
+    { "class": "person", "bbox": [422, 98, 466, 199] },
+    { "class": "person", "bbox": [469, 115, 500, 211] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 58, 500, 333] },
+    { "class": "person", "bbox": [1, 144, 117, 333] },
+    { "class": "person", "bbox": [241, 117, 356, 333] },
+    { "class": "person", "bbox": [291, 98, 500, 333] },
+    { "class": "person", "bbox": [360, 148, 401, 196] },
+    { "class": "person", "bbox": [408, 149, 453, 197] },
+    { "class": "person", "bbox": [453, 149, 497, 197] },
+    { "class": "person", "bbox": [1, 117, 25, 154] },
+    { "class": "person", "bbox": [19, 117, 43, 154] },
+    { "class": "person", "bbox": [100, 117, 114, 135] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [120, 19, 273, 375] },
+    { "class": "person", "bbox": [177, 62, 472, 375] },
+    { "class": "person", "bbox": [314, 1, 500, 375] },
+    { "class": "person", "bbox": [1, 1, 286, 375] },
+    { "class": "person", "bbox": [14, 1, 69, 76] },
+    { "class": "person", "bbox": [53, 1, 158, 76] },
+    { "class": "person", "bbox": [69, 1, 222, 76] },
+    { "class": "person", "bbox": [109, 1, 190, 76] },
+    { "class": "person", "bbox": [190, 1, 280, 76] },
+    { "class": "person", "bbox": [285, 1, 374, 76] },
+    { "class": "person", "bbox
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [336, 63, 417, 333] },
+    { "class": "person", "bbox": [198, 100, 307, 333] },
+    { "class": "person", "bbox": [102, 47, 153, 170] },
+    { "class": "person", "bbox": [125, 50, 147, 108] },
+    { "class": "person", "bbox": [135, 49, 166, 103] },
+    { "class": "person", "bbox": [171, 36, 198, 91] },
+    { "class": "person", "bbox": [93, 47, 114, 101] },
+    { "class": "person", "bbox": [69, 50, 93, 101] },
+    { "class": "person", "bbox": [64, 50, 81, 101] },
+    { "class": "person", "bbox": [40, 48, 58, 101] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-87227 result:
+  mAP@0.5:       0.5073
+  mAP@0.5:0.95:  0.4134
+  AP_per_iou:    {0.5: 0.5073, 0.55: 0.4596, 0.6: 0.4458, 0.65: 0.4302, 0.7: 0.4041, 0.75: 0.397, 0.8: 0.3848, 0.85: 0.378, 0.9: 0.3748, 0.95: 0.3526}
+运行成功: checkpoint-87227 Mon Jan 27 06:01:07 CST 2025
+运行开始: checkpoint-92358 Mon Jan 27 06:01:07 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.02s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.01it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.11it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.55it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.31it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-92358
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-92358
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "dog", "bbox":142, 206, 244, 362] }]
+}
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [369, 216, 500, 281] },
+    { "class": "sheep", "bbox": [323, 203, 454, 280] },
+    { "class": "sheep", "bbox": [7, 146, 124, 199] },
+    { "class": "sheep", "bbox": [90, 98, 181, 146] },
+    { "class": "sheep", "bbox": [185, 93, 249, 151] },
+    { "class": "sheep", "bbox": [251, 97, 302, 134] },
+    { "class": "sheep", "bbox": [263, 91, 316, 106] },
+    { "class": "sheep", "bbox": [264, 100, 311, 134] },
+    { "class": "sheep", "bbox": [338, 117, 439, 152] },
+    { "class": "sheep", "bbox": [312, 100, 354, 134] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 350, 229] }]
+}
+--[train] /data3/lihl/llama-lora-output/checkpoint-92358 result:
+  mAP@0.5:       0.8918
+  mAP@0.5:0.95:  0.8734
+  AP_per_iou:    {0.5: 0.8918, 0.55: 0.8901, 0.6: 0.8872, 0.65: 0.8863, 0.7: 0.8795, 0.75: 0.8658, 0.8: 0.8618, 0.85: 0.8604, 0.9: 0.8584, 0.95: 0.853}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 96, 46, 375] },
+    { "class": "person", "bbox": [39, 169, 64, 214] },
+    { "class": "person", "bbox": [124, 164, 149, 217] },
+    { "class": "person", "bbox": [92, 166, 119, 217] },
+    { "class": "person", "bbox": [33, 162, 54, 217] },
+    { "class": "person", "bbox": [199, 169, 234, 220] },
+    { "class": "person", "bbox": [219, 153, 255, 219] },
+    { "class": "person", "bbox": [251, 156, 280, 214] },
+    { "class": "person", "bbox": [275, 156, 308, 208] },
+    { "class": "person", "bbox": [301, 147, 339, 208] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [16, 191, 34, 219] },
+    { "class": "person", "bbox": [19, 93, 48, 183] },
+    { "class": "person", "bbox": [8, 96, 23, 129] },
+    { "class": "person", "bbox": [4, 78, 15, 124] },
+    { "class": "person", "bbox": [96, 96, 108, 130] },
+    { "class": "person", "bbox": [116, 96, 129, 125] },
+    { "class": "person", "bbox": [125, 93, 147, 121] },
+    { "class": "person", "bbox": [147, 96, 171, 121] },
+    { "class": "person", "bbox": [169, 93, 184, 114] },
+    { "class": "person", "bbox": [181, 93, 195, 114] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "car", "bbox": [353, 142, 500, 333] },
+    { "class": "car", "bbox": [174, 114, 332, 210] },
+    { "class": "car", "bbox": [1, 125, 156, 209] },
+    { "class": "car", "bbox": [1, 1, 106, 60] },
+    { "class": "car", "bbox": [355, 75, 358, 98] },
+    { "class": "car", "bbox": [354, 79, 366, 96] },
+    { "class": "car", "bbox": [366, 79, 378, 100] },
+    { "class": "car", "bbox": [379, 79, 400, 98] },
+    { "class": "car", "bbox": [400, 79, 420, 96] },
+    { "class": "car", "bbox": [420, 79, 441, 97] },
+    { "class": "car", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [167, 70, 190, 204] },
+    { "class": "person", "bbox": [180, 71, 205, 217] },
+    { "class": "person", "bbox": [199, 63, 241, 256] },
+    { "class": "person", "bbox": [224, 85, 274, 304] },
+    { "class": "person", "bbox": [310, 70, 349, 247] },
+    { "class": "person", "bbox": [383, 78, 450, 172] },
+    { "class": "person", "bbox": [379, 97, 471, 253] },
+    { "class": "person", "bbox": [272, 145, 374, 333] },
+    { "class": "person", "bbox": [381, 85, 436, 169] },
+    { "class": "person", "bbox": [320, 75, 368, 166] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-92358 result:
+  mAP@0.5:       0.4914
+  mAP@0.5:0.95:  0.4336
+  AP_per_iou:    {0.5: 0.4914, 0.55: 0.4742, 0.6: 0.4588, 0.65: 0.4492, 0.7: 0.4281, 0.75: 0.4189, 0.8: 0.4122, 0.85: 0.406, 0.9: 0.4027, 0.95: 0.394}
+运行成功: checkpoint-92358 Mon Jan 27 06:14:14 CST 2025
+运行开始: checkpoint-97489 Mon Jan 27 06:14:14 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.03it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.06it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.60it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.36it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-97489
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-97489
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [160, 216, 205, 260] },
+    { "class": "sheep", "bbox": [142, 203, 200, 252] },
+    { "class": "sheep", "bbox": [198, 213, 236, 242] },
+    { "class": "sheep", "bbox": [183, 202, 222, 236] },
+    { "class": "sheep", "bbox": [167, 204, 195, 234] },
+    { "class": "sheep", "bbox": [242, 208, 265, 229] },
+    { "class": "sheep", "bbox": [235, 203, 259, 226] },
+    { "class": "sheep", "bbox": [210, 202, 238, 234] },
+    { "class": "sheep", "bbox": [213, 203, 244, 226] },
+    { "class": "sheep", "bbox": [1, 191, 33, 224] },
+
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 227, 23, 350] },
+    { "class": "person", "bbox": [35, 232, 87, 358] },
+    { "class": "person", "bbox": [14, 232, 49, 353] },
+    { "class": "person", "bbox": [178, 231, 281, 343] },
+    { "class": "person", "bbox": [227, 237, 291, 348] },
+    { "class": "person", "bbox": [271, 234, 342, 358] },
+    { "class": "person", "bbox": [347, 233, 409, 358] },
+    { "class": "person", "bbox": [385, 231, 441, 344] },
+    { "class": "person", "bbox": [88, 237, 114, 289] },
+    { "class": "person", "bbox": [122, 233, 141, 289] },
+    { "class": "person", "bbox
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+
+--[train] /data3/lihl/llama-lora-output/checkpoint-97489 result:
+  mAP@0.5:       0.9005
+  mAP@0.5:0.95:  0.854
+  AP_per_iou:    {0.5: 0.9005, 0.55: 0.8871, 0.6: 0.867, 0.65: 0.8605, 0.7: 0.85, 0.75: 0.85, 0.8: 0.844, 0.85: 0.8328, 0.9: 0.8248, 0.95: 0.8228}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [419, 99, 486, 347] },
+    { "class": "person", "bbox": [301, 170, 371, 399] },
+    { "class": "person", "bbox": [384, 148, 420, 323] },
+    { "class": "person", "bbox": [1, 167, 25, 216] },
+    { "class": "person", "bbox": [22, 166, 41, 202] },
+    { "class": "person", "bbox": [51, 164, 79, 207] },
+    { "class": "person", "bbox": [61, 164, 89, 207] },
+    { "class": "person", "bbox": [94, 166, 114, 207] },
+    { "class": "person", "bbox": [118, 166, 149, 207] },
+    { "class": "person", "bbox": [146, 166, 170, 207] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [73, 129, 150, 223] },
+    { "class": "person", "bbox": [158, 144, 238, 302] },
+    { "class": "person", "bbox": [244, 130, 284, 200] },
+    { "class": "person", "bbox": [277, 118, 346, 200] },
+    { "class": "person", "bbox": [306, 101, 433, 304] },
+    { "class": "person", "bbox": [242, 96, 450, 297] },
+    { "class": "person", "bbox": [231, 105, 280, 195] },
+    { "class": "person", "bbox": [14, 130, 77, 241] },
+    { "class": "person", "bbox": [9, 109, 45, 209] },
+    { "class": "person", "bbox": [47, 114, 85, 213] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [247, 97, 348, 375] },
+    { "class": "person", "bbox": [1, 18, 97, 375] },
+    { "class": "person", "bbox": [71, 1, 263, 375] },
+    { "class": "person", "bbox": [84, 1, 433, 375] },
+    { "class": "person", "bbox": [286, 1, 484, 375] },
+    { "class": "person", "bbox": [113, 60, 201, 361] },
+    { "class": "person", "bbox": [420, 1, 500, 359] },
+    { "class": "person", "bbox": [364, 1, 427, 204] },
+    { "class": "person", "bbox": [422, 1, 473, 211] },
+    { "class": "person", "bbox": [471, 1, 500, 194] },
+    { "class": "person", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "car", "bbox": [2, 66, 173, 178] },
+    { "class": "car", "bbox": [27, 109, 234, 194] },
+    { "class": "car", "bbox": [204, 125, 356, 171] },
+    { "class": "car", "bbox": [356, 133, 500, 197] },
+    { "class": "car", "bbox": [438, 106, 500, 153] },
+    { "class": "car", "bbox": [450, 125, 500, 157] },
+    { "class": "car", "bbox": [334, 105, 400, 138] },
+    { "class": "car", "bbox": [344, 104, 426, 137] },
+    { "class": "car", "bbox": [426, 104, 500, 140] },
+    { "class": "car", "bbox": [198, 105, 271, 139] },
+    { "class": "car", "bbox
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [406, 174, 432, 223] },
+    { "class": "person", "bbox": [427, 170, 456, 222] },
+    { "class": "person", "bbox": [241, 169, 271, 221] },
+    { "class": "person", "bbox": [208, 162, 224, 225] },
+    { "class": "person", "bbox": [187, 164, 202, 221] },
+    { "class": "person", "bbox": [167, 164, 187, 221] },
+    { "class": "person", "bbox": [134, 180, 156, 229] },
+    { "class": "person", "bbox": [150, 187, 163, 226] },
+    { "class": "person", "bbox": [139, 166, 153, 226] },
+    { "class": "person", "bbox": [118, 166, 133, 226] },
+    { "class": "person", "bbox
+--[test] /data3/lihl/llama-lora-output/checkpoint-97489 result:
+  mAP@0.5:       0.4937
+  mAP@0.5:0.95:  0.4228
+  AP_per_iou:    {0.5: 0.4937, 0.55: 0.4705, 0.6: 0.4548, 0.65: 0.4355, 0.7: 0.4191, 0.75: 0.4061, 0.8: 0.3972, 0.85: 0.3879, 0.9: 0.3839, 0.95: 0.3788}
+运行成功: checkpoint-97489 Mon Jan 27 06:28:06 CST 2025
+运行开始: checkpoint-102620 Mon Jan 27 06:28:06 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.04it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.04it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.12it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.57it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.34it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-102620
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-102620
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [369, 216, 500, 281] },
+    { "class": "sheep", "bbox": [323, 203, 454, 280] },
+    { "class": "sheep", "bbox": [307, 186, 390, 224] },
+    { "class": "sheep", "bbox": [259, 183, 317, 219] },
+    { "class": "sheep", "bbox": [231, 173, 302, 183] },
+    { "class": "sheep", "bbox": [207, 169, 265, 187] },
+    { "class": "sheep", "bbox": [183, 170, 222, 189] },
+    { "class": "sheep", "bbox": [108, 156, 171, 188] },
+    { "class": "sheep", "bbox": [79, 144, 121, 188] },
+    { "class": "sheep", "bbox": [38, 144, 81, 188] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 350, 225] },
+    { "class": "sheep", "bbox": [384, 147, 425, 198] },
+    { "class": "sheep", "bbox": [278, 154, 323, 191] },
+    { "class": "sheep", "bbox": [176, 158, 212, 189] },
+    { "class": "sheep", "bbox": [136, 169, 187, 227] },
+    { "class": "sheep", "bbox": [136, 160, 193, 189] },
+    { "class": "sheep", "bbox": [104, 167, 147, 191] },
+    { "class": "sheep", "bbox": [147, 157, 188, 189] },
+    { "class": "sheep", "bbox": [158, 154, 193, 188] },
+    { "class": "sheep", "bbox": [171, 155, 203, 188] },
+    { "class": "sheep", "bbox": [108, 154, 144, 188
+--[train] /data3/lihl/llama-lora-output/checkpoint-102620 result:
+  mAP@0.5:       0.9202
+  mAP@0.5:0.95:  0.8975
+  AP_per_iou:    {0.5: 0.9202, 0.55: 0.9192, 0.6: 0.9048, 0.65: 0.8999, 0.7: 0.8999, 0.75: 0.8922, 0.8: 0.8879, 0.85: 0.8874, 0.9: 0.8859, 0.95: 0.8773}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+--[test] /data3/lihl/llama-lora-output/checkpoint-102620 result:
+  mAP@0.5:       0.4943
+  mAP@0.5:0.95:  0.4368
+  AP_per_iou:    {0.5: 0.4943, 0.55: 0.483, 0.6: 0.4606, 0.65: 0.4496, 0.7: 0.4405, 0.75: 0.4201, 0.8: 0.4109, 0.85: 0.4089, 0.9: 0.4066, 0.95: 0.3932}
+运行成功: checkpoint-102620 Mon Jan 27 06:41:46 CST 2025

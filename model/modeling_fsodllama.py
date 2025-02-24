@@ -1,6 +1,8 @@
 import json, os
 import torch
 import transformers
+from transformers import TrainerCallback
+import time
 import pandas as pd
 from torch.utils.data import Dataset
 from dataclasses import dataclass, field
@@ -18,37 +20,6 @@ def rank0_print(*args):
     if local_rank == 0:
         print(*args)
 
-def get_json_data(data_path):
-    list_data_dict = []
-        
-        # 逐行读取 JSONL 文件
-    with open(data_path, "r") as f:
-        for line in f:
-            data = json.loads(line.strip())
-            list_data_dict.append({
-                "input_ids": torch.tensor(data["input_ids"], dtype=torch.long).to('cuda'),
-                "attention_mask": torch.tensor(data["attention_mask"], dtype=torch.long).to('cuda'),
-                "labels": torch.tensor(data["labels"], dtype=torch.long).to('cuda'),
-                "sup_visual_tokens": data["sup_visual_tokens"],
-                "que_visual_tokens": data["que_visual_tokens"]
-            })
-    return list_data_dict
-
-def load_csv_to_list(data_path):
-    list_data_dict = []
-    dataframe = pd.read_csv(data_path)
-    
-    for _, row in dataframe.iterrows():
-        list_data_dict.append({
-            "input_ids": torch.tensor(eval(row["input_ids"]), dtype=torch.long).to('cuda'),
-            "attention_mask": torch.tensor(eval(row["attention_mask"]), dtype=torch.long).to('cuda'),
-            "labels": torch.tensor(eval(row["labels"]), dtype=torch.long).to('cuda'),
-            "sup_visual_tokens": eval(row["sup_visual_tokens"]),
-            "que_visual_tokens": eval(row["que_visual_tokens"])
-        })
-    
-    return list_data_dict
-
 @dataclass
 class DataCollatorForSupervisedDataset(object):
     """Collate examples for supervised fine-tuning."""
@@ -56,20 +27,16 @@ class DataCollatorForSupervisedDataset(object):
     tokenizer: transformers.PreTrainedTokenizer
 
     def __call__(self, instances: Sequence[Dict]) -> Dict[str, torch.Tensor]:
-        input_ids, labels, attention_mask, sup_visual_tokens, que_visual_tokens = tuple([instance[key] for instance in instances]
-                                  for key in ("input_ids", "labels", "attention_mask", "sup_visual_tokens", "que_visual_tokens"))
-
-        input_ids = torch.stack(input_ids)
-        labels = torch.stack(labels)
-        attention_mask = torch.stack(attention_mask)
+        image_path, caption, class_name, annotations, image_size = tuple([instance[key] for instance in instances]
+                                  for key in ("image_path", "caption", "class_name", "annotations", "image_size"))
         
-        batch = dict(
-            input_ids=input_ids,
-            labels=labels,
-            attention_mask=attention_mask,
-            sup_visual_tokens=sup_visual_tokens,
-            que_visual_tokens=que_visual_tokens
-        )
+        batch = {
+            "image_path": image_path,
+            "caption": caption,
+            "class_name": class_name,
+            "annotations": annotations,
+            "image_size": image_size
+        }
 
         return batch
 
@@ -89,8 +56,8 @@ class PrepareDataset(Dataset):
         
         print(f"Formatting Datasets from {data_path}...")
 
-        self.list_data_dict = load_data_from_batches(data_path)
-        
+        df = pd.read_json(data_path, lines=True)
+        self.list_data_dict = df.to_dict(orient="records")
         self.tokenizer = tokenizer
         self.data_args = data_args
     
@@ -98,19 +65,77 @@ class PrepareDataset(Dataset):
         return len(self.list_data_dict)
     
     def __getitem__(self, idx) -> Dict[str, torch.Tensor]:
-        input_ids = self.list_data_dict[idx]['input_ids']
-        attention_mask = self.list_data_dict[idx]['attention_mask']
-        labels = self.list_data_dict[idx]['labels']
-        sup_visual_tokens = self.list_data_dict[idx]['sup_visual_tokens']
-        que_visual_tokens = self.list_data_dict[idx]['que_visual_tokens']
-        input_ids = input_ids.squeeze()
-        attention_mask = attention_mask.squeeze()
-        labels = labels.squeeze()
+        image_path = self.list_data_dict[idx]['image_path']
+        caption = self.list_data_dict[idx]['caption']
+        class_name = self.list_data_dict[idx]['class_name']
+        annotations = self.list_data_dict[idx]['annotations']
+        image_size = self.list_data_dict[idx]['image_size']
+
         data_dict = {
-            'input_ids': input_ids,
-            'attention_mask': attention_mask,
-            'labels': labels,
-            'sup_visual_tokens': sup_visual_tokens,
-            'que_visual_tokens': que_visual_tokens
+            "image_path" : image_path,
+            "caption"    : caption,
+            "class_name" : class_name,
+            "annotations": annotations,
+            "image_size" : image_size
         }
+
         return data_dict
+
+import time
+from transformers import TrainerCallback
+
+class TimeRemainingCallback(TrainerCallback):
+    def __init__(self, window_size=10):
+        self.start_time = None
+        self.total_steps = None
+        self.step_times = []
+        self.window_size = window_size
+        self.last_step_time = None
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        self.start_time = time.time()
+        self.total_steps = state.max_steps
+        self.last_step_time = self.start_time
+
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if self.start_time is None or self.total_steps is None:
+            return
+
+        current_time = time.time()
+        completed_steps = state.global_step
+
+        if completed_steps > 0:
+            step_time = current_time - self.last_step_time  # 计算当前 step 的用时
+            self.last_step_time = current_time  # 更新上一次 step 结束时间
+
+            self.step_times.append(step_time)
+            if len(self.step_times) > self.window_size:
+                self.step_times.pop(0)
+
+            avg_time_per_step = (
+                sum(self.step_times) / len(self.step_times)
+                if self.step_times else (current_time - self.start_time) / completed_steps
+            )
+
+            remaining_steps = self.total_steps - completed_steps
+            remaining_time = remaining_steps * avg_time_per_step
+            elapsed_time = current_time - self.start_time
+
+            # 格式化时间（支持天）
+            elapsed_time_formatted = self.format_time(elapsed_time)
+            remaining_time_formatted = self.format_time(remaining_time)
+
+            print(f"Elapsed time: {elapsed_time_formatted} | Estimated time remaining: {remaining_time_formatted}")
+
+    @staticmethod
+    def format_time(seconds):
+        """格式化时间，支持天数"""
+        days = int(seconds // 86400)
+        hours = int((seconds % 86400) // 3600)
+        minutes = int((seconds % 3600) // 60)
+        secs = int(seconds % 60)
+
+        if days > 0:
+            return f"{days}days {hours:02}:{minutes:02}:{secs:02}"
+        else:
+            return f"{hours:02}:{minutes:02}:{secs:02}"

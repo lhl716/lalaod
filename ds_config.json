@@ -1,0 +1,24 @@
+{
+    "train_batch_size": "auto",
+    "train_micro_batch_size_per_gpu": 2,
+    "gradient_accumulation_steps": "auto",
+    "zero_optimization": {
+      "stage": 3,
+      "contiguous_gradients": true,
+      "overlap_comm": true,
+      "stage3_param_persistence_threshold": 1e5,
+      "stage3_max_live_parameters": 1e9,
+      "offload_param": {
+        "device": "none"
+      },
+      "offload_optimizer": {
+        "device": "none"
+      }
+    },
+    "bf16": {
+      "enabled": true
+    },
+    "fp16": {
+      "enabled": false
+    }
+  }

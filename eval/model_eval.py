@@ -1,4 +1,4 @@
-import torch, random, json
+import torch, random, json, re
 import torch.nn as nn
 from peft import PeftModel
 from tqdm import tqdm, trange
@@ -105,55 +105,53 @@ def read_json(json_string):
         return None
 
 if __name__ == "__main__":
-    #projection = nn.Linear(768, 4096)
-    #projection = projection.to('cuda')
-    #projection.load_state_dict(torch.load('/data/lihl/fsod/model/visual_projection/visual_proj.pth'))
-    #print(projection.weight)
-
-
-    #set_seed(40)
     model_base = "meta-llama/Meta-Llama-3.1-8B-Instruct"
-    model_path = "/data/lihl/fsod/llama-lora-output"
+    model_path = "/data3/lihl/llama-lora-output/checkpoint-5131"
     model, tokenizer = load_pretrained_model(model_base=model_base, model_path=model_path)
-    data_list = load_data_from_batches('/data/lihl/LLaFS2/data/sft_data_without_attr/training_batches_20250109')
+    data_list = load_data_from_batches('/data3/lihl/sft_dataset_20250115/test')
+    print(f'len(data_list): {len(data_list)}')
     num = random.randint(0,len(data_list))
-    num = 0
+    #num = 382, 2063
+    #num = 19093, 17058
+    num = 382
+    print(f'选择的是第{num}张图片')
     input_ids = data_list[num]['input_ids']
     attention_mask = data_list[num]['attention_mask']
     sup_visual_tokens = data_list[num]['sup_visual_tokens']
     que_visual_tokens = data_list[num]['que_visual_tokens']
 
-    # print(instruction)
-    # print(input)
-    # print(type(sup_visual_tokens))
-    # print(np.array(sup_visual_tokens).shape) #(1,32,768) list
     # model, tokenizer = load_ft_model()
-    prompt = "Hello, how are you?? What's your name?"
-    inputs = tokenizer(prompt, return_tensors="pt", truncation=True).to("cuda")
     eos_token_id = tokenizer.eos_token_id 
-    
-    #tokenizer.pad_token = "<|finetune_right_pad_id|>"
-    #pad_token_id = tokenizer.convert_tokens_to_ids(tokenizer.pad_token)
-    #eos_token_id = pad_token_id
-
-    #print(eos_token_id)
-    
-    generation_config = {
-        "bos_token_id": 128000,
-        "do_sample": True,
-        "eos_token_id": [
-            128001, 
-            128009
-        ],
-        "max_length": 512,
-        "pad_token_id": 128009,
-        "top_p": 0.9
-    }
-    generation_config = GenerationConfig(**generation_config)
     
     model.eval()
 
     decoded_text = tokenizer.decode(input_ids[0])
+    cleaned_text = re.sub(r"<\|start_header_id\|>assistant<\|end_header_id\|>.*", "", decoded_text, flags=re.DOTALL).strip()
+    #print("Cleaned Text:\n", cleaned_text)
+    # 正则表达式分组匹配
+    pattern = r"(.*)(<\|start_header_id\|>assistant<\|end_header_id\|>).*"
+    match = re.match(pattern, decoded_text, flags=re.DOTALL)
+    print(decoded_text)
+
+    if match:
+        # 提取删除后的文本内容
+        remaining_text = f"{match.group(1).strip()} {match.group(2).strip()}"  # 保留到 <|start_header_id|>assistant<|end_header_id|>
+        removed_text = decoded_text[len(remaining_text):].strip()  # 删除后的部分
+        #print("\nRemaining Text:\n", remaining_text)
+        print("\nLabel:\n", removed_text)
+
+    tokenized = tokenizer(
+                    cleaned_text,
+                    return_tensors="pt",
+                    padding=False,
+                    truncation=True
+                ).to("cuda")
+
+    after_input_ids = tokenized["input_ids"]
+    after_input_ids = after_input_ids[:, 1:]
+
+    #print("Re-encoded input_ids:\n", after_input_ids)
+    #print(decoded_text)
 
     for i in trange(100):
         results = []
@@ -161,23 +159,22 @@ if __name__ == "__main__":
             outputs = model.generate(
                 #input_ids=inputs["input_ids"],
                 #attention_mask=inputs["attention_mask"],
-                inputs=input_ids,
+                inputs=after_input_ids,
                 sup_visual_tokens=sup_visual_tokens,
                 que_visual_tokens=que_visual_tokens,
                 #max_length=512,
-                max_new_tokens=32,
+                max_new_tokens=128,
                 do_sample=True,
-                temperature=0.7,
-                #repetition_penalty=1.2, #另外一个penalty？
-                #num_beams=5,
-                #eos_token_id=eos_token_id
-                #generation_config=generation_config
+                eos_token_id=eos_token_id,
+                top_p=0.9,
+                temperature=0.3
             )
             #print(outputs.size())
-            generated_text = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+            generated_text = tokenizer.batch_decode(outputs, skip_special_tokens=False)
             print(f'Generate text[0]: {generated_text[0]}')
             result = read_json(generated_text[0])
             results.append(result)
+        break
     
     acc = 1 - results.count(None) / len(results)
     print(f'JSON达成率：{acc}')

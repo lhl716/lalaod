@@ -30,7 +30,7 @@ def load_data_from_batches(input_dir):
         batch_data = load_file(file_path)
         
         num_samples = len(set(k.split("_")[1] for k in batch_data.keys()))  # 根据 sample_x 推断样本数
-        for i in trange(num_samples):
+        for i in range(num_samples):
             sample = {}
             for key in batch_data.keys():
                 if key.startswith(f"sample_{i}_"):

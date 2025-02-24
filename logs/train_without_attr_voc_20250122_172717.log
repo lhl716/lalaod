@@ -1,0 +1,92 @@
+Loading LLM...
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.01s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.02it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.00it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.37it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.21it/s]
+WARNING:accelerate.utils.other:Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+trainable params: 83,886,080 || all params: 8,117,309,440 || trainable%: 1.0334
+Formatting Datasets from /data3/lihl/sft_dataset_20250115/train...
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+Using /data3/lihl/sft_dataset_20250115/train as train dataset
+Formatting Datasets from /data3/lihl/sft_dataset_20250115/val...
+Loading /data3/lihl/sft_dataset_20250115/val/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2536
+Using /data3/lihl/sft_dataset_20250115/val as validation dataset
+adding special token
+Traceback (most recent call last):
+  File "train/train_without_attr_voc.py", line 50, in <module>
+    train(args)
+  File "train/train_without_attr_voc.py", line 45, in train
+    llm.train()
+  File "/data/lihl/fsod/model/fsodllama.py", line 443, in train
+    trainer.train()
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/trainer.py", line 2123, in train
+    return inner_training_loop(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/trainer.py", line 2481, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/trainer.py", line 3579, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/trainer.py", line 3633, in compute_loss
+    outputs = model(**inputs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/accelerate/utils/operations.py", line 820, in forward
+    return model_forward(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/accelerate/utils/operations.py", line 808, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/peft/peft_model.py", line 1577, in forward
+    return self.base_model(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/peft/tuners/tuners_utils.py", line 188, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/data/lihl/fsod/model/fsodllama.py", line 258, in forward
+    return super().forward(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 1190, in forward
+    outputs = self.model(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 945, in forward
+    layer_outputs = decoder_layer(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 676, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 559, in forward
+    query_states = self.q_proj(hidden_states)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/peft/tuners/lora/layer.py", line 556, in forward
+    result = result + lora_B(lora_A(dropout(x))) * scaling
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

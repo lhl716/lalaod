@@ -1,0 +1,193 @@
+运行开始: checkpoint-5131 Thu Jan 23 01:17:06 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.30s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:03<00:03,  1.63s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.37s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.89s/it]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-5131
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-5131
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 334, 222] },
+    { "class": "sheep", "bbox": [1, 147, 48, 234] }]
+}
+--/data3/lihl/llama-lora-output/checkpoint-5131 [train] result:
+  mAP@0.5:       0.1486
+  mAP@0.5:0.95:  0.0688
+  AP_per_iou:    {0.5: 0.1486, 0.55: 0.1481, 0.6: 0.128, 0.65: 0.1002, 0.7: 0.0696, 0.75: 0.038, 0.8: 0.0269, 0.85: 0.0223, 0.9: 0.0029, 0.95: 0.0029}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "person", "bbox": [1, 163, 50, 375] },
+    { "class": "person", "bbox": [1, 147, 56, 375] },
+    { "class": "person", "bbox": [1, 116, 61, 375] },
+    { "class": "person", "bbox": [1, 1, 66, 375] },
+    { "class": "person", "bbox": [1, 1, 66, 375] },
+    { "class": "person", "bbox": [1, 1, 68, 375] },
+    { "class": "person", "bbox": [1, 1, 69, 375] },
+    { "class": "person", "bbox": [1, 1, 69, 375] },
+    { "class": "person", "bbox": [1, 1, 69, 375] },
+    { "class": "person", "bbox": [1, 1, 69, 375] },
+    { "class": "person", "bbox
+--/data3/lihl/llama-lora-output/checkpoint-5131 [test] result:
+  mAP@0.5:       0.0929
+  mAP@0.5:0.95:  0.0407
+  AP_per_iou:    {0.5: 0.0929, 0.55: 0.0897, 0.6: 0.0788, 0.65: 0.0553, 0.7: 0.038, 0.75: 0.0208, 0.8: 0.0155, 0.85: 0.0109, 0.9: 0.0032, 0.95: 0.0019}
+运行成功: checkpoint-5131 Thu Jan 23 01:28:24 CST 2025
+运行开始: checkpoint-10262 Thu Jan 23 01:28:24 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.15s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.17s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.17s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.18it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.03it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-10262
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-10262
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 322, 228] },
+    { "class": "sheep", "bbox": [245, 149, 287, 228] },
+    { "class": "sheep", "bbox": [213, 149, 244, 228] },
+    { "class": "sheep", "bbox": [191, 149, 221, 228] },
+    { "class": "sheep", "bbox": [85, 149, 125, 229] },
+    { "class": "sheep", "bbox": [1, 149, 61, 229] }]
+}
+--/data3/lihl/llama-lora-output/checkpoint-10262 [train] result:
+  mAP@0.5:       0.1795
+  mAP@0.5:0.95:  0.0744
+  AP_per_iou:    {0.5: 0.1795, 0.55: 0.1753, 0.6: 0.147, 0.65: 0.0783, 0.7: 0.0659, 0.75: 0.0329, 0.8: 0.0326, 0.85: 0.0272, 0.9: 0.0027, 0.95: 0.0027}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+--/data3/lihl/llama-lora-output/checkpoint-10262 [test] result:
+  mAP@0.5:       0.1057
+  mAP@0.5:0.95:  0.0434
+  AP_per_iou:    {0.5: 0.1057, 0.55: 0.1008, 0.6: 0.0871, 0.65: 0.047, 0.7: 0.0369, 0.75: 0.0198, 0.8: 0.0195, 0.85: 0.0127, 0.9: 0.003, 0.95: 0.0018}
+运行成功: checkpoint-10262 Thu Jan 23 01:39:54 CST 2025
+运行开始: checkpoint-15393 Thu Jan 23 01:39:54 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.07s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.07s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.29it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.13it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-15393
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-15393
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Warning: Cannot parse the string as JSON, returning None instead.
+{
+  "annotations": [
+    { "class": "sheep", "bbox": [1, 199, 20, 232] },
+    { "class": "sheep", "bbox": [1, 183, 27, 213] },
+    { "class": "sheep", "bbox": [1, 174, 33, 202] },
+    { "class": "sheep", "bbox": [1, 168, 34, 179] },
+    { "class": "sheep", "bbox": [1, 163, 34, 170] },
+    { "class": "sheep", "bbox": [1, 159, 33, 169] },
+    { "class": "sheep", "bbox": [1, 154, 32, 164] },
+    { "class": "sheep", "bbox": [1, 146, 33, 154] },
+    { "class": "sheep", "bbox": [1, 134, 33, 152] },
+    { "class": "sheep", "bbox": [1, 131, 33, 151] },
+
+JSON解析失败：Expecting ',' delimiter: line 18 column 42 (char 898)
+Warning: Cannot parse the string as JSON, returning None instead.
+, 333, 218] },
+    { "class": "sheep", "bbox": [1, 142, 43, 218] }]
+}
+--/data3/lihl/llama-lora-output/checkpoint-15393 [train] result:
+  mAP@0.5:       0.1758
+  mAP@0.5:0.95:  0.0689
+  AP_per_iou:    {0.5: 0.1758, 0.55: 0.1521, 0.6: 0.1235, 0.65: 0.0828, 0.7: 0.0742, 0.75: 0.03, 0.8: 0.0263, 0.85: 0.0176, 0.9: 0.0036, 0.95: 0.0027}
+Loading /data3/lihl/sft_dataset_20250115/test/batch_0.safetensors
+DATA LOADED!!! Len of train data: 2572
+testing /data3/lihl/sft_dataset_20250115/test
+testing: 0/2572
+--/data3/lihl/llama-lora-output/checkpoint-15393 [test] result:
+  mAP@0.5:       0.1155
+  mAP@0.5:0.95:  0.042
+  AP_per_iou:    {0.5: 0.1155, 0.55: 0.096, 0.6: 0.0772, 0.65: 0.0464, 0.7: 0.0373, 0.75: 0.0173, 0.8: 0.0155, 0.85: 0.0096, 0.9: 0.0035, 0.95: 0.0017}
+运行成功: checkpoint-15393 Thu Jan 23 01:52:04 CST 2025
+运行开始: checkpoint-20524 Thu Jan 23 01:52:04 CST 2025
+No model name, loading llama3.1-8b
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.03s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.06s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.30it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.15it/s]
+Projection layer loaded from /data/lihl/fsod/model/visual_projection/visual_proj.pth
+Loading LoRA weights from /data3/lihl/llama-lora-output/checkpoint-20524
+Merging weights...
+Model loaded with LoRA weights.
+Model and tokenizer loaded successfully!
+testing lora model in /data3/lihl/llama-lora-output/checkpoint-20524
+Loading /data3/lihl/sft_dataset_20250115/train/batch_0.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_1.safetensors
+Loading /data3/lihl/sft_dataset_20250115/train/batch_2.safetensors
+DATA LOADED!!! Len of train data: 20524
+testing /data3/lihl/sft_dataset_20250115/train
+adding special token
+testing: 0/20524
+Traceback (most recent call last):
+  File "eval/model_test_v2.py", line 336, in <module>
+    model_test(args)
+  File "eval/model_test_v2.py", line 297, in model_test
+    outputs = model.generate(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/lihl/fsod/model/fsodllama.py", line 302, in generate
+    return super().generate(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/generation/utils.py", line 2215, in generate
+    result = self._sample(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/generation/utils.py", line 3206, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/fsod/model/fsodllama.py", line 258, in forward
+    return super().forward(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 1190, in forward
+    outputs = self.model(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 945, in forward
+    layer_outputs = decoder_layer(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 676, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/lihl/miniconda3/envs/fsod/lib/python3.8/site-packages/transformers/models/llama/modeling_llama.py", line 563, in forward
+    query_states = query_states.view(bsz, q_len, self.num_heads, self.head_dim).transpose(1, 2)
+KeyboardInterrupt
+运行失败: checkpoint-20524 Thu Jan 23 01:56:49 CST 2025
